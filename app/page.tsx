@@ -1,113 +1,203 @@
+'use client'
 import Image from 'next/image'
+import Sphere from './components/Sphere';
+import { gsap } from 'gsap'
+import { useRef, useState, useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import NavigationScreen from './components/NavigationScreen'
+import BurgerNavbar from './components/Navbar'
+import useWindowDimensions from '@/lib/useWindowDimension';
+
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
+  const { width, height } = useWindowDimensions();
+  const [menuOpen, setMenuOpen] = useState('closed')
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [projectScrolled, setProjectScrolled] = useState(false)
+  const [gsapMenu, setGsapMenu] = useState(false)
+
+  window.onload=pageLoaded
+
+  function pageLoaded() {
+    let tl2 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } })
+
+    // Define animations using the timeline
+    tl2.from('.titlediv', { x: -width!/4, delay:0.15, duration: 1.5, ease: 'power4.inOut', opacity: 0 })
+        .from('#spherediv', { x: width!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
+        .from('.Navbar', { y: -80, delay:0.15 , duration: 1.5, ease: 'power4.inOut' }, '-=1.8')
+        .from('#spherediv2', { y: -height!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
+        .from('#spherediv3', { y: height!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
+        .call(addMouseMoveListener) // Call a function to add mousemove event listener after animations finish
+
+    function addMouseMoveListener() {
+        document.addEventListener('mousemove', mouseMoveFunc)
+    }
+
+    function mouseMoveFunc(e: MouseEvent) {
+        if (!isScrolledDown()) {
+            const depth = -15
+            const moveX = (e.pageX - window.innerWidth/10) / depth
+            const moveY = (e.pageY - window.innerHeight/10) / depth
+            
+            gsap.to('.titlediv', {
+                duration: 1,
+                x: moveX,
+                y: moveY,
+                ease: 'slow',
+                stagger: 0.008,
+                overwrite: true
+            })
+            gsap.to('#spherediv', {
+              duration: 1,
+              x: -moveX,
+              y: -moveY,
+              ease: 'slow',
+              stagger: 0.008,
+              overwrite: true
+            })
+            gsap.to('#spherediv2', {
+              duration: 1,
+              x: -moveX*2,
+              y: -moveY*1,
+              ease: 'slow',
+              stagger: 0.008,
+              overwrite: true
+            })
+            gsap.to('#spherediv3', {
+              duration: 0.5,
+              x: -moveX*0.2,
+              y: -moveY*0.2,
+              ease: 'slow',
+              stagger: 0.008,
+              overwrite: true
+            })
+            
+        }
+    }
+
+    function isScrolledDown() {
+        return window.scrollY > 0
+    }
+  }
+
+  const toggleMenu = () => {
+    setMenuOpen((curr) => (curr === 'open' ? 'closed' : 'open'))
+    setGsapMenu((curr) => !curr)
+    if (gsapMenu) {
+        gsap.timeline().to('.NavigationScreen', {
+            duration: 0.3,
+            x: '-100%',
+            ease: 'power2.inOut'
+        })} else {
+        gsap.timeline().to('.NavigationScreen', {
+            duration: 0.3,
+            x: '100vw',
+            ease: 'power2.inOut',
+        })
+    }
+  }
+
+  useEffect(() => {
+    const checkScroll = () => {
+        if (window.scrollY > window.innerHeight) {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(false)
+        }
+    }
+    window.addEventListener('scroll', checkScroll)
+
+    return () => {
+        window.removeEventListener('scroll', checkScroll)
+    }
+  }, [isScrolled])
+
+  useEffect(() => {
+    if (menuOpen === 'open') {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'unset';
+    }
+  }, [menuOpen]);
+
+  useEffect(() => {
+    gsap.timeline().to('#spherediv', {
+      scrollTrigger:{
+          trigger: '.page',
+          start:'+=50',
+          end: '+=65%',
+          scrub: true,
+          //invalidateOnRefresh: true
+      },
+      opacity: 0, zIndex: 0, x: 300,
+    }).to('.titlediv', {
+      scrollTrigger:{
+          trigger: '.page',
+          start: '+=50',
+          end: '+=65%',
+          scrub: true,
+          invalidateOnRefresh: true,
+          //markers: true,
+      },
+      opacity: 0,
+      zIndex: 0,
+      x: -200,
+    }).to('#spherediv2', {
+      scrollTrigger:{
+          trigger: '.page',
+          start: '+=50',
+          end: '+=65%',
+          scrub: true,
+          invalidateOnRefresh: true,
+          //markers: true,
+      },
+      opacity: 0,
+      zIndex: 0,
+      y: -200,
+    }).to('#spherediv3', {
+      scrollTrigger:{
+          trigger: '.page',
+          start: '+=50',
+          end: '+=65%',
+          scrub: true,
+          invalidateOnRefresh: true,
+          //markers: true,
+      },
+      opacity: 0,
+      zIndex: 0,
+      y: 200,
+    })
+  })
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="page flex min-h-screen flex-col items-center justify-between text-white">
+      <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled}/>
+      <NavigationScreen toggleMenu={toggleMenu} />
+      <section id="home" className='min-h-screen flex'>
+          <div className='titlediv flex flex-col'>
+            <h1 className='main-title'>PORTFOLIO</h1>
+            <h1 className='main-title'>JOEL WICKSTRÖM</h1>
+          </div>
+          <div id='spherediv' className="fixed top-1/2 left-[70%] w-[70vh] h-[70vh] sm:left-[70%] sm:w-[50vw] sm:h-[50vw] transform -translate-y-1/2 opacity-70 z-0">
+            <Sphere parent="spherediv"/>
+          </div>
+          <div id='spherediv2' className="fixed top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[14vw] sm:h-[14vw] transform -translate-y-1/2 opacity-50 z-0">
+            <Sphere parent="spherediv2"/>
+          </div>
+          <div id='spherediv3' className="fixed top-3/4 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[50vw] sm:h-[50vw] sm:top-[95%] transform -translate-y-1/2 opacity-50 z-0">
+            <Sphere parent="spherediv3"/>
+          </div>
+      </section>
+      <section id="about" className='min-h-screen w-full bg-[#1d1d1d] rounded-t-2xl sm:rounded-none shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] z-10'>
+      </section>
+      <section id="projects" className='min-h-screen bg-[#0c0c0c] w-full text-[#eff876] z-10'>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      </section>
+      <section id="resume" className='min-h-screen bg-[#eff876] w-full <-10'>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
     </main>
   )
 }
