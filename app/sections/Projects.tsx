@@ -16,10 +16,10 @@ export default function Project() {
       <div className="max-w-[800px] text-justify pt-10 sm:pt-0 sm:text-xl font-extralight">
         <div className="">
           <h1 className="text-2xl font-normal mb-4 text-[#eff876]">
-            Random stuff I&apos;ve built
+            Random stuff I&apos;ve built and tinkered with
           </h1>
           <p className="text-white mb-4">
-            Here are some small projects I have tinkered with over the years.
+            Here are some small projects I have spent my time with over the years.
           </p>
         </div>
   

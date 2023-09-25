@@ -16,6 +16,12 @@ body {
   overflow-x: hidden;
 }
 
+pre {
+  border: #5a5c40 1px solid;
+  border-radius: 0.5rem;
+  max-width:85vw;
+}
+
 body::after {
   position:fixed;
   content:"";

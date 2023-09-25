@@ -11,6 +11,8 @@ import {client} from "@/sanity/lib/client"
 import { useState, useEffect } from "react"
 import imageUrlBuilder from '@sanity/image-url'
 import {getImageDimensions} from '@sanity/asset-utils'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 type Props = {
     params: {
@@ -34,19 +36,13 @@ type Props = {
     )
   }
 
-  const SampleCodeComponent = ({node}) => {
-    if (!node || !node.code) {
-      return null;
-    }
-    const { language, code } = node;
-    return (
-      <div>
-        language = {language}
-        <pre>
-          {code}
-        </pre>
-      </div>
-    );
+  const SampleCodeComponent = ({value}) => {
+  const {language, code} = value 
+  return (
+    <SyntaxHighlighter language={language || 'text'} style={vs2015}>
+      {code}
+    </SyntaxHighlighter>
+  )
   }
   
   // Dynamic metadata for SEO
@@ -73,7 +69,7 @@ type Props = {
 
     useEffect(() => {
       getSingleProject(slug).then((response) => setProject(response))
-    }, [])
+    }, [slug])
 
     if (!project) {
       return <h1>Loading...</h1>
@@ -81,7 +77,7 @@ type Props = {
     
   
     return (
-      <main className="project w-screen min-h-screen text-white mx-auto lg:px-16 px-8 bg-[#1d1d1d] pt-10 pb-10">
+      <main className="project w-screen min-h-screen text-white mx-auto lg:px-16 px-8 bg-[#1d1d1d] pt-10 pb-10 overflow-x-hidden">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
               <div className="flex flex-row items-start w-full">
                   <h1 className="font-bold text-[#eff876] lg:text-5xl text-3xl lg:leading-tight my-4">
