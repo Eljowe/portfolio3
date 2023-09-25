@@ -6,7 +6,7 @@ type NavigationScreenProps = {
 
 const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
     return(
-        <div className='NavigationScreen'>
+        <div className='NavigationScreen z-20'>
             <a className='NavigationScreenCross' onClick={toggleMenu}><BsX className='BsX' size='4rem'/></a>
             <nav>
                 <ul className='NavList'>

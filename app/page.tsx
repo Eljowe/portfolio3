@@ -7,6 +7,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import NavigationScreen from './components/NavigationScreen'
 import BurgerNavbar from './components/Navbar'
 import useWindowDimensions from '@/lib/useWindowDimension';
+import About from './sections/About';
+import { getProjects } from "@/sanity/lib/query";
+import Link from "next/link";
+import type { ProjectType } from "@/types";
+import Projects from "./sections/Projects"
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -108,9 +113,11 @@ export default function Home() {
         }
     }
     window.addEventListener('scroll', checkScroll)
+    
 
     return () => {
         window.removeEventListener('scroll', checkScroll)
+
     }
   }, [isScrolled])
 
@@ -190,10 +197,11 @@ export default function Home() {
             <Sphere parent="spherediv3"/>
           </div>
       </section>
-      <section id="about" className='min-h-screen w-full bg-[#1d1d1d] rounded-t-2xl sm:rounded-none shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] z-10'>
+      <section id="about" className='min-h-screen w-full p-6 flex items-center justify-center bg-[#1d1d1d] rounded-t-2xl sm:rounded-none shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] z-10'>
+        <About/>
       </section>
-      <section id="projects" className='min-h-screen bg-[#0c0c0c] w-full text-[#eff876] z-10'>
-
+      <section id="projects" className='min-h-screen flex p-6 bg-[#0c0c0c] w-full items-center justify-center text-[#eff876] z-10'>
+          <Projects />
       </section>
       <section id="resume" className='min-h-screen bg-[#eff876] w-full <-10'>
 
