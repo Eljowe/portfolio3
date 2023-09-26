@@ -30,7 +30,7 @@ export default function Project() {
               key={project._id}
               className="flex flex-row items-center gap-x-4 bg-[#1d1d20] border border-transparent hover:border-zinc-700 p-4 rounded-lg ease-in-out"
             >
-              <Image
+              <img
                 src={project.logo}
                 width={100}
                 height={100}

@@ -5,7 +5,8 @@ const nextConfig = {
             'cdn.sanity.io',
             'joelwickstrom.com',
             'api.sanity.io',
-            'nextjoelapp.fly.dev'
+            'nextjoelapp.fly.dev',
+            media_url.replace(/^[^.]*/, 'https://cdn.sanity.io'),
         ]
     }
 }

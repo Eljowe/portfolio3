@@ -16,7 +16,7 @@ const About = () => {
                 </div>
             </div>
             <div className='Aboutmediv mb-6 mt-6'>
-                <Image src={`/profile2.jpg`} width={200} height={200} alt="me" className='profilepic w-full sm:w-max rounded-[0.5rem] my-4 sm:float-right sm:m-[3vh_2vh_2vh_4vh]'/>
+                <img src='/profile2.jpg' alt="me" className='profilepic w-full sm:w-max rounded-[0.5rem] w-[200px] h-[200px] my-4 sm:float-right sm:m-[3vh_2vh_2vh_4vh]'/>
                 <h3 className='text-2xl font-normal mb-4 mt-6 text-[#eff876]'>About this website</h3>
                 <p className='Aboutme'>
                     I try to update this website from time to time, as I gather new experience through work and personal projects.
