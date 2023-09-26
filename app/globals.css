@@ -19,7 +19,7 @@ body {
 pre {
   border: #5a5c40 1px solid;
   border-radius: 0.5rem;
-  max-width:85vw;
+  max-width:100%;
 }
 
 body::after {
@@ -81,13 +81,17 @@ body::after {
 }
 
 .NavbarScrolled {
+  position:fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100vw;
+  left: 0;
   position: fixed;
   box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.88);
+  background-color:#1D1D1D;
   z-index: 20;
+  height: 60px;
 }
 
 .NavbarScrolled *{
@@ -146,8 +150,6 @@ body::after {
 
 
 .crossIconButton {
-  width: 100%;
-  height: 4vh;
   margin: 0.5vh;
   cursor: pointer;
   position: absolute;

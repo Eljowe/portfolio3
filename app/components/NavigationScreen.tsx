@@ -11,16 +11,16 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
             <nav>
                 <ul className='NavList'>
                     <li>
-                        <a className='NavigationScreenItem hover:text-[#eff876]' href="#home" onClick={toggleMenu}>Home</a>
+                        <a className='NavigationScreenItem hover:text-[#eff876]' href="/#home" onClick={toggleMenu}>Home</a>
                     </li>
                     <li>
-                        <a className='NavigationScreenItem hover:text-[#eff876]' href="#about" onClick={toggleMenu}>About</a>
+                        <a className='NavigationScreenItem hover:text-[#eff876]' href="/#about" onClick={toggleMenu}>About</a>
                     </li>
                     <li>
-                        <a className='NavigationScreenItem hover:text-[#eff876]' href="#projects" onClick={toggleMenu}>Projects</a>
+                        <a className='NavigationScreenItem hover:text-[#eff876]' href="/#projects" onClick={toggleMenu}>Projects</a>
                     </li>
                     <li>
-                        <a className='NavigationScreenItem hover:text-[#eff876]' href="#resume" onClick={toggleMenu}>Resume</a>
+                        <a className='NavigationScreenItem hover:text-[#eff876]' href="/#resume" onClick={toggleMenu}>Resume</a>
                     </li>
                 </ul>
             </nav>

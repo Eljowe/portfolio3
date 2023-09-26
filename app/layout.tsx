@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`debug-screens ${red_hat.className}`}>
+      <body className={`debug-screens1 ${red_hat.className}`}>
         {children}
         </body>
     </html>

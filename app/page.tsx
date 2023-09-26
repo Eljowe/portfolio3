@@ -12,6 +12,7 @@ import { getProjects } from "@/sanity/lib/query";
 import Link from "next/link";
 import type { ProjectType } from "@/types";
 import Projects from "./sections/Projects"
+import Resume from './sections/Resume';
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -28,7 +29,7 @@ export default function Home() {
   function pageLoaded() {
     let tl2 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } })
 
-    // Define animations using the timeline
+
     tl2.from('.titlediv', { x: -width!/4, delay:0.15, duration: 1.5, ease: 'power4.inOut', opacity: 0 })
         .from('#spherediv', { x: width!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
         .from('.Navbar', { y: -80, delay:0.15 , duration: 1.5, ease: 'power4.inOut' }, '-=1.8')
@@ -113,7 +114,6 @@ export default function Home() {
         }
     }
     window.addEventListener('scroll', checkScroll)
-    
 
     return () => {
         window.removeEventListener('scroll', checkScroll)
@@ -203,8 +203,8 @@ export default function Home() {
       <section id="projects" className='min-h-screen flex p-6 bg-[#0c0c0c] w-full items-center justify-center text-[#eff876] z-10'>
           <Projects />
       </section>
-      <section id="resume" className='min-h-screen bg-[#eff876] w-full <-10'>
-
+      <section id="resume" className='min-h-screen flex p-6 bg-[#eff876] w-full items-center justify-center z-10 text-black'>
+          <Resume />
       </section>
     </main>
   )

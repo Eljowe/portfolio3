@@ -49,7 +49,7 @@ const Sphere: React.FC<SphereProps> = ({ parent }) => {
     controls.enablePan = false
     controls.enableZoom = true
     controls.autoRotate = true
-    controls.autoRotateSpeed = 1
+    controls.autoRotateSpeed = (Math.random() * 3) - 1.5;
     //scene.userData.controls = controls //this allowed continuing scrolling div when in render view
     controls.minDistance = 400 //50
     controls.maxDistance = 800 //400

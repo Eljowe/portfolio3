@@ -8,11 +8,15 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import urlBuilder from '@sanity/image-url'
 import {client} from "@/sanity/lib/client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import imageUrlBuilder from '@sanity/image-url'
 import {getImageDimensions} from '@sanity/asset-utils'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import NavigationScreen from '../../components/NavigationScreen'
+import BurgerNavbar from '../../components/Navbar'
+import { gsap } from 'gsap'
+
 
 type Props = {
     params: {
@@ -66,21 +70,61 @@ type Props = {
     const slug = params.project;
     //const project: ProjectType = getSingleProject(slug);
     const [project, setProject] = useState<ProjectType>()
+    const [menuOpen, setMenuOpen] = useState('closed')
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [projectScrolled, setProjectScrolled] = useState(false)
+    const [gsapMenu, setGsapMenu] = useState(false)
 
     useEffect(() => {
       getSingleProject(slug).then((response) => setProject(response))
     }, [slug])
 
+    useEffect(() => {
+      const checkScroll = () => {
+          if (window.scrollY > 10) {
+              setIsScrolled(true)
+          } else {
+              setIsScrolled(false)
+          }
+      }
+      window.addEventListener('scroll', checkScroll)
+      
+  
+      return () => {
+          window.removeEventListener('scroll', checkScroll)
+  
+      }
+    }, [isScrolled])
+
     if (!project) {
       return <h1>Loading...</h1>
+    }
+
+    const toggleMenu = () => {
+      setMenuOpen((curr) => (curr === 'open' ? 'closed' : 'open'))
+      setGsapMenu((curr) => !curr)
+      if (gsapMenu) {
+          gsap.timeline().to('.NavigationScreen', {
+              duration: 0.3,
+              x: '-100%',
+              ease: 'power2.inOut'
+          })} else {
+          gsap.timeline().to('.NavigationScreen', {
+              duration: 0.3,
+              x: '100vw',
+              ease: 'power2.inOut',
+          })
+      }
     }
     
   
     return (
-      <main className="project w-screen min-h-screen text-white mx-auto lg:px-16 px-8 bg-[#1d1d1d] pt-10 pb-10 overflow-x-hidden">
-        <div className="max-w-3xl mx-auto flex flex-col items-center">
+      <main className="project w-screen min-h-screen text-white mx-auto lg:px-16 px-8 bg-[#1d1d1d] pb-10 overflow-x-hidden">
+        <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled}/>
+        <NavigationScreen toggleMenu={toggleMenu} />
+        <div className="max-w-[800px] mx-auto flex flex-col items-center mt-10">
               <div className="flex flex-row items-start w-full">
-                  <h1 className="font-bold text-[#eff876] lg:text-5xl text-3xl lg:leading-tight my-4">
+                  <h1 className="font-bold text-[#eff876] lg:text-5xl text-3xl lg:leading-tight my-4 text-left">
                   {project.name}
                   </h1>
               </div>
@@ -92,16 +136,16 @@ type Props = {
                   alt={project.coverImage?.alt || project.name}
               />
               <div className="flex flex-row justify-between w-full mt-8">
-                  <Link href={'/#projects'} className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">Back</Link>
-                  <a
+                  <button onClick={() => window.history.back()} className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">Go Back</button>
+                  {project.projectUrl ? <a
                     href={project.projectUrl}
                     rel="noreferrer noopener"
                     className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
                     >
                     Open project website
-                  </a>
+                  </a> : null }
               </div>
-              <div className="flex flex-col gap-y-6 mt-8 leading-7 text-justify">
+              <div className="flex flex-col max-w-[800px] w-[100%] mx-auto gap-y-6 mt-8 leading-7 text-justify">
                   <PortableText 
                       value={project.description} 
                       components={{
