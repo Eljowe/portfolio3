@@ -11,10 +11,10 @@ const Resume = () => {
                     <p className="text-sm mt-4 font-bold text-gray-500">Sep. 2019 - Currently</p>
                     <h3 className="text-xl text-[#9a2db6]">Aalto University</h3>
                     <ul className="educationlist list-disc list-inside">
-                        <li className="pr-2 ml-2 text-left text-[1rem] sm:text-[1.2rem]">Master's student</li>
+                        <li className="pr-2 ml-2 text-left text-[1rem] sm:text-[1.2rem]">Master&apos;s student</li>
                         <li className="pr-2 ml-2 text-left text-[1rem] sm:text-[1.2rem]">Major in human-computer interaction</li>
                         <li className="pr-2 ml-2 text-left text-[1rem] sm:text-[1.2rem]">Minor in computer science</li>
-                        <li className="pr-2 ml-2 text-left text-[1rem] sm:text-[1.2rem]">Bachelor's degree in electronics and electrical engineering</li>
+                        <li className="pr-2 ml-2 text-left text-[1rem] sm:text-[1.2rem]">Bachelor&apos;s degree in electronics and electrical engineering</li>
                     </ul>
                     <p className="text-sm mt-6 font-bold text-gray-500">Sep. 2021 - Currently</p>
                     <h3 className="text-xl text-[#9a2db6]">University of Helsinki</h3>

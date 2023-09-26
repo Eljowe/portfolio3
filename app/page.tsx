@@ -21,25 +21,38 @@ export default function Home() {
   const { width, height } = useWindowDimensions();
   const [menuOpen, setMenuOpen] = useState('closed')
   const [isScrolled, setIsScrolled] = useState(false)
-  const [projectScrolled, setProjectScrolled] = useState(false)
   const [gsapMenu, setGsapMenu] = useState(false)
+  const sphere1 = useRef(null);
+  const sphere2 = useRef(null);
+  const sphere3 = useRef(null);
+  const titleref = useRef(null);
 
-  window.onload=pageLoaded
-
-  function pageLoaded() {
-    let tl2 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } })
-
-
-    tl2.from('.titlediv', { x: -width!/4, delay:0.15, duration: 1.5, ease: 'power4.inOut', opacity: 0 })
-        .from('#spherediv', { x: width!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
-        .from('.Navbar', { y: -80, delay:0.15 , duration: 1.5, ease: 'power4.inOut' }, '-=1.8')
-        .from('#spherediv2', { y: -height!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
-        .from('#spherediv3', { y: height!/4, delay:0.15 , duration: 1.5, ease: 'power4.inOut', opacity: 0 }, '-=1.65')
-        .call(addMouseMoveListener) // Call a function to add mousemove event listener after animations finish
-
-    function addMouseMoveListener() {
-        document.addEventListener('mousemove', mouseMoveFunc)
-    }
+  useEffect(() => {
+    if (sphere1.current && sphere2.current && sphere3.current && titleref.current) {
+      const tl1 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
+      const tl2 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
+      const tl3 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
+      const tl4 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
+      tl1.fromTo(
+        sphere1.current,
+        { x: window.innerWidth / 4, opacity: 0 },
+        { x: 0, y: 0, opacity: 0.7, delay: 0.15, ease: 'power4.inOut' }
+      );
+      tl2.fromTo(
+        sphere2.current,
+        { y: -window.innerHeight / 4, opacity: 0 },
+        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: 'power4.inOut' }
+      );
+      tl3.fromTo(
+        sphere3.current,
+        { y: -window.innerHeight / 4, opacity: 0 },
+        { x: 0, y: 0, opacity: 0.5, delay: 0.15, ease: 'power4.inOut' }
+      );
+      tl4.fromTo(
+        titleref.current,
+        { x: -window.innerWidth / 4, opacity: 0 },
+        { x: 0, y: 0, opacity: 1, delay: 0.15, ease: 'power4.inOut' }
+      ).then(() => {document.addEventListener('mousemove', mouseMoveFunc)});
 
     function mouseMoveFunc(e: MouseEvent) {
         if (!isScrolledDown()) {
@@ -47,7 +60,7 @@ export default function Home() {
             const moveX = (e.pageX - window.innerWidth/10) / depth
             const moveY = (e.pageY - window.innerHeight/10) / depth
             
-            gsap.to('.titlediv', {
+            gsap.to(titleref.current, {
                 duration: 1,
                 x: moveX,
                 y: moveY,
@@ -55,7 +68,7 @@ export default function Home() {
                 stagger: 0.008,
                 overwrite: true
             })
-            gsap.to('#spherediv', {
+            gsap.to(sphere1.current, {
               duration: 1,
               x: -moveX,
               y: -moveY,
@@ -63,7 +76,7 @@ export default function Home() {
               stagger: 0.008,
               overwrite: true
             })
-            gsap.to('#spherediv2', {
+            gsap.to(sphere2.current, {
               duration: 1,
               x: -moveX*2,
               y: -moveY*1,
@@ -71,7 +84,7 @@ export default function Home() {
               stagger: 0.008,
               overwrite: true
             })
-            gsap.to('#spherediv3', {
+            gsap.to(sphere3.current, {
               duration: 0.5,
               x: -moveX*0.2,
               y: -moveY*0.2,
@@ -86,7 +99,11 @@ export default function Home() {
     function isScrolledDown() {
         return window.scrollY > 0
     }
-  }
+    }
+  }, [sphere1, sphere2, sphere3, titleref]);
+
+  
+
 
   const toggleMenu = () => {
     setMenuOpen((curr) => (curr === 'open' ? 'closed' : 'open'))
@@ -130,20 +147,20 @@ export default function Home() {
   }, [menuOpen]);
 
   useEffect(() => {
-    gsap.timeline().to('#spherediv', {
+    gsap.timeline().fromTo(sphere1.current, {opacity: 0.7, x: 0, y: 0}, {
       scrollTrigger:{
           trigger: '.page',
           start:'+=50',
-          end: '+=65%',
+          end: '+=105%',
           scrub: true,
-          //invalidateOnRefresh: true
+          invalidateOnRefresh: true
       },
       opacity: 0, zIndex: 0, x: 300,
-    }).to('.titlediv', {
+    }).fromTo(titleref.current, {opacity: 1, x: 0, y: 0}, {
       scrollTrigger:{
           trigger: '.page',
           start: '+=50',
-          end: '+=65%',
+          end: '+=105%',
           scrub: true,
           invalidateOnRefresh: true,
           //markers: true,
@@ -151,11 +168,11 @@ export default function Home() {
       opacity: 0,
       zIndex: 0,
       x: -200,
-    }).to('#spherediv2', {
+    }).fromTo(sphere2.current, { opacity: 0.6, x: 0, y: 0}, {
       scrollTrigger:{
           trigger: '.page',
           start: '+=50',
-          end: '+=65%',
+          end: '+=105%',
           scrub: true,
           invalidateOnRefresh: true,
           //markers: true,
@@ -163,11 +180,11 @@ export default function Home() {
       opacity: 0,
       zIndex: 0,
       y: -200,
-    }).to('#spherediv3', {
+    }).fromTo(sphere3.current, {opacity: 0.5, x: 0, y: 0}, {
       scrollTrigger:{
           trigger: '.page',
           start: '+=50',
-          end: '+=65%',
+          end: '+=105%',
           scrub: true,
           invalidateOnRefresh: true,
           //markers: true,
@@ -183,17 +200,17 @@ export default function Home() {
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled}/>
       <NavigationScreen toggleMenu={toggleMenu} />
       <section id="home" className='min-h-screen flex'>
-          <div className='titlediv flex flex-col'>
+          <div ref={titleref} className='titlediv flex flex-col fixed top-1/3 text-[12vw] sm:text-6xl md:text-8xl right-4 max-w-[80vw] sm:w-screen text-left text-[#eff876] z-[2]'>
             <h1 className='main-title'>PORTFOLIO</h1>
             <h1 className='main-title'>JOEL WICKSTRÖM</h1>
           </div>
-          <div id='spherediv' className="fixed top-1/2 left-[70%] w-[70vh] h-[70vh] sm:left-[70%] sm:w-[50vw] sm:h-[50vw] transform -translate-y-1/2 opacity-70 z-0">
+          <div ref={sphere1} id='spherediv' className="fixed top-1/2 left-[70%] w-[70vh] h-[70vh] sm:left-[70%] sm:w-[50vw] sm:h-[50vw] transform -translate-y-1/2 opacity-70 z-0">
             <Sphere parent="spherediv"/>
           </div>
-          <div id='spherediv2' className="fixed top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[14vw] sm:h-[14vw] transform -translate-y-1/2 opacity-50 z-0">
+          <div ref={sphere2} id='spherediv2' className="fixed top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[14vw] sm:h-[14vw] transform -translate-y-1/2 opacity-50 z-0">
             <Sphere parent="spherediv2"/>
           </div>
-          <div id='spherediv3' className="fixed top-3/4 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[50vw] sm:h-[50vw] sm:top-[95%] transform -translate-y-1/2 opacity-50 z-0">
+          <div ref={sphere3} id='spherediv3' className="fixed top-1/3 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[50vw] sm:h-[50vw] sm:top-[95%] transform -translate-y-1/2 opacity-50 z-0">
             <Sphere parent="spherediv3"/>
           </div>
       </section>

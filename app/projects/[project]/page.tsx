@@ -10,12 +10,13 @@ import urlBuilder from '@sanity/image-url'
 import {client} from "@/sanity/lib/client"
 import { useState, useEffect, useRef } from "react"
 import imageUrlBuilder from '@sanity/image-url'
-import {getImageDimensions} from '@sanity/asset-utils'
+import {SanityImageAsset, getImageDimensions} from '@sanity/asset-utils'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import NavigationScreen from '../../components/NavigationScreen'
 import BurgerNavbar from '../../components/Navbar'
 import { gsap } from 'gsap'
+import { FC } from 'react';
 
 
 type Props = {
@@ -24,30 +25,45 @@ type Props = {
     };
   };
 
+  interface SampleImageProps {
+    value: SanityImageAsset
+  }
+
+  interface SampleCodeProps {
+    value: {
+      language?: string;
+      code: string;
+    };
+  }
+
   const builder = imageUrlBuilder(client)
 
-  const SampleImageComponent = ({value}) => {
-    const {width, height} = getImageDimensions(value)
+  const SampleImageComponent: FC<SampleImageProps> = ({ value }) => {
+    const { width, height } = getImageDimensions(value);
+  
     return (
-      <img
+      <Image
         src={urlBuilder(client).image(value).width(800).fit('max').auto('format').url()}
-        alt={value.alt || ' '}
+        alt={'image'}
+        width={2000}
+        height={2000}
         loading="lazy"
         style={{
           aspectRatio: width / height,
         }}
       />
-    )
-  }
-
-  const SampleCodeComponent = ({value}) => {
-  const {language, code} = value 
-  return (
-    <SyntaxHighlighter language={language || 'text'} style={vs2015}>
-      {code}
-    </SyntaxHighlighter>
-  )
-  }
+    );
+  };
+  
+  const SampleCodeComponent: FC<SampleCodeProps> = ({ value }) => {
+    const { language, code } = value;
+  
+    return (
+      <SyntaxHighlighter language={language || 'text'} style={vs2015}>
+        {code}
+      </SyntaxHighlighter>
+    );
+  };
   
   // Dynamic metadata for SEO
   /*
@@ -136,7 +152,7 @@ type Props = {
                   alt={project.coverImage?.alt || project.name}
               />
               <div className="flex flex-row justify-between w-full mt-8">
-                  <button onClick={() => window.history.back()} className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">Go Back</button>
+                  <a href="/#projects" className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">Go Back</a>
                   {project.projectUrl ? <a
                     href={project.projectUrl}
                     rel="noreferrer noopener"

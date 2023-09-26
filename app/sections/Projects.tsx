@@ -25,7 +25,7 @@ export default function Project() {
   
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
           {projects ? projects.map((project) => (
-            <Link
+            <a
               href={`/projects/${project.slug}`}
               key={project._id}
               className="flex flex-row items-center gap-x-4 bg-[#1d1d20] border border-transparent hover:border-zinc-700 p-4 rounded-lg ease-in-out"
@@ -41,7 +41,7 @@ export default function Project() {
                 <h2 className="font-semibold mb-1">{project.name}</h2>
                 <div className="text-sm text-zinc-400">{project.tagline}</div>
               </div>
-            </Link>
+            </a>
           )): null}
         </div>
       </div>
