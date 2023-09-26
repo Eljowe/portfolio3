@@ -18,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="theme-color" content="#1d1d1d"></meta>
+      </head>
       <body className={`debug-screens1 ${red_hat.className}`}>
         {children}
         </body>

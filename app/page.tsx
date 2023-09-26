@@ -35,22 +35,22 @@ export default function Home() {
       const tl4 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
       tl1.fromTo(
         sphere1.current,
-        { x: window.innerWidth / 4, opacity: 0 },
+        { x: window.innerWidth / 2, opacity: 0 },
         { x: 0, y: 0, opacity: 0.7, delay: 0.15, ease: 'power4.inOut' }
       );
       tl2.fromTo(
         sphere2.current,
-        { y: -window.innerHeight / 4, opacity: 0 },
+        { y: -window.innerHeight / 2, opacity: 0 },
         { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: 'power4.inOut' }
       );
       tl3.fromTo(
         sphere3.current,
-        { y: -window.innerHeight / 4, opacity: 0 },
+        { y: window.innerHeight / 2, opacity: 0 },
         { x: 0, y: 0, opacity: 0.5, delay: 0.15, ease: 'power4.inOut' }
       );
       tl4.fromTo(
         titleref.current,
-        { x: -window.innerWidth / 4, opacity: 0 },
+        { x: -window.innerWidth / 2, opacity: 0 },
         { x: 0, y: 0, opacity: 1, delay: 0.15, ease: 'power4.inOut' }
       ).then(() => {document.addEventListener('mousemove', mouseMoveFunc)});
 
