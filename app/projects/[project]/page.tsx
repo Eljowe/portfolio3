@@ -42,7 +42,7 @@ type Props = {
     const { width, height } = getImageDimensions(value);
   
     return (
-      <Image
+      <img
         src={urlBuilder(client).image(value).width(800).fit('max').auto('format').url()}
         alt={'image'}
         width={2000}
@@ -144,7 +144,7 @@ type Props = {
                   {project.name}
                   </h1>
               </div>
-              <Image
+              <img
                   className="rounded-xl border border-zinc-800 object-cover max-h-[400px]"
                   width={900}
                   height={460}
