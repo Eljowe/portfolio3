@@ -204,13 +204,13 @@ export default function Home() {
             <h1 className='main-title'>PORTFOLIO</h1>
             <h1 className='main-title'>JOEL WICKSTRÖM</h1>
           </div>
-          <div ref={sphere1} id='spherediv' className="fixed top-1/2 left-[70%] w-[70vh] h-[70vh] sm:left-[70%] sm:w-[50vw] sm:h-[50vw] transform -translate-y-1/2 opacity-70 z-0">
+          <div ref={sphere1} id='spherediv' className="fixed pointer-events-none top-1/2 left-[70%] w-[70vh] h-[70vh] sm:left-[70%] sm:w-[50vw] sm:h-[50vw] transform -translate-y-1/2 opacity-70 z-0">
             <Sphere parent="spherediv"/>
           </div>
-          <div ref={sphere2} id='spherediv2' className="fixed top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[14vw] sm:h-[14vw] transform -translate-y-1/2 opacity-50 z-0">
+          <div ref={sphere2} id='spherediv2' className="fixed pointer-events-none top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[14vw] sm:h-[14vw] transform -translate-y-1/2 opacity-50 z-0">
             <Sphere parent="spherediv2"/>
           </div>
-          <div ref={sphere3} id='spherediv3' className="fixed top-1/3 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[50vw] sm:h-[50vw] sm:top-[95%] transform -translate-y-1/2 opacity-50 z-0">
+          <div ref={sphere3} id='spherediv3' className="fixed pointer-events-none top-1/3 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[50vw] sm:h-[50vw] sm:top-[95%] transform -translate-y-1/2 opacity-50 z-0">
             <Sphere parent="spherediv3"/>
           </div>
       </section>

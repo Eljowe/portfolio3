@@ -47,10 +47,10 @@ const Sphere: React.FC<SphereProps> = ({ parent }) => {
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enabled = false
     controls.enablePan = false
-    controls.enableZoom = true
+    controls.enableZoom = false
     controls.autoRotate = true
     controls.autoRotateSpeed = (Math.random() * 3) - 1.5;
-    //scene.userData.controls = controls //this allowed continuing scrolling div when in render view
+    scene.userData.controls = controls //this allowed continuing scrolling div when in render view
     controls.minDistance = 400 //50
     controls.maxDistance = 800 //400
 
