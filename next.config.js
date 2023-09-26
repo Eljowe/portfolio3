@@ -2,7 +2,10 @@
 const nextConfig = {
     images: {
         domains: [
-            'cdn.sanity.io'
+            'cdn.sanity.io',
+            'joelwickstrom.com',
+            'api.sanity.io',
+            'nextjoelapp.fly.dev'
         ]
     }
 }
