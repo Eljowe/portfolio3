@@ -220,7 +220,7 @@ export default function Home() {
       <section id="projects" className='min-h-screen flex p-6 bg-[#0c0c0c] w-full items-center justify-center text-[#eff876] z-10'>
           <Projects />
       </section>
-      <section id="resume" className='min-h-screen flex p-6 bg-[#eff876] w-full items-center justify-center z-10 text-black'>
+      <section id="resume" className='min-h-screen flex p-6 bg-[#1d1d1d] w-full items-center justify-center z-10 text-white'>
           <Resume />
       </section>
     </main>
