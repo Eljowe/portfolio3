@@ -33,6 +33,14 @@ export default function Home() {
       const tl2 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
       const tl3 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
       const tl4 = gsap.timeline({ defaults: { ease: 'rough.inOut', duration: 1.5 } });
+      const anim = gsap.fromTo("#about", {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
+      /*
+      ScrollTrigger.create({
+        trigger: ".profilepic",
+        animation: anim,
+        toggleActions: 'play none none none',
+        once: true,
+      }); */
       tl1.fromTo(
         sphere1.current,
         { x: window.innerWidth / 2, opacity: 0 },
@@ -196,7 +204,7 @@ export default function Home() {
   })
 
   return (
-    <main className="page flex min-h-screen flex-col items-center justify-between text-white">
+    <main className="page flex min-h-screen flex-col items-center justify-between text-white overflow-hidden">
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled}/>
       <NavigationScreen toggleMenu={toggleMenu} />
       <section id="home" className='min-h-screen flex'>
@@ -214,7 +222,7 @@ export default function Home() {
             <Sphere parent="spherediv3"/>
           </div>
       </section>
-      <section id="about" className='min-h-screen w-full p-6 flex items-center justify-center bg-[#1d1d1d] rounded-t-2xl sm:rounded-none shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] z-10'>
+      <section id="aboutsection" className='min-h-screen w-full p-6 flex items-center justify-center bg-[#1d1d1d] rounded-t-2xl sm:rounded-none shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] z-10'>
         <About/>
       </section>
       <section id="projects" className='min-h-screen flex p-6 bg-[#0c0c0c] w-full items-center justify-center text-[#eff876] z-10'>
