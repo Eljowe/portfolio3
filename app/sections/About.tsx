@@ -26,7 +26,7 @@ const About = () => {
         <img
           src="/profile2.jpg"
           alt="me"
-          className="profilepic w-full sm:w-max rounded-[0.5rem] sm:w-[200px] sm:h-[200px] my-4 sm:float-right sm:m-[3vh_2vh_2vh_4vh]"
+          className="profilepic w-full rounded-[0.5rem] sm:w-[200px] sm:h-[200px] my-4 sm:float-right sm:m-[3vh_2vh_2vh_4vh]"
         />
         <h3 className="text-2xl font-normal mb-4 mt-6 text-[#eff876]">
           About this website
