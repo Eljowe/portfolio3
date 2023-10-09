@@ -10,7 +10,7 @@ export default function Project() {
   }, []);
 
   return (
-    <div className="max-w-[800px] text-justify pt-10 sm:pt-0 sm:text-xl font-extralight">
+    <div className="max-w-[1200px] text-justify pt-10 sm:pt-0 sm:text-xl font-extralight">
       <div className="">
         <h1 className="text-2xl text-left font-normal mb-4 text-[#eff876]">
           Random stuff I&apos;ve built and tinkered with
@@ -26,14 +26,14 @@ export default function Project() {
               <a
                 href={`/projects/${project.slug}`}
                 key={project._id}
-                className="flex flex-row items-center gap-x-4 bg-[#1d1d20] border border-transparent hover:border-zinc-700 p-4 rounded-lg ease-in-out"
+                className="flex flex-row items-center gap-x-4 bg-[#1d1d20] min-h-[120px] border border-transparent hover:border-zinc-700 p-4 rounded-lg ease-in-out"
               >
                 <img
                   src={project.logo}
                   width={100}
                   height={100}
                   alt={project.name}
-                  className="bg-zinc-800 rounded-md shadow-md object-cover max-w-[60px]"
+                  className="bg-zinc-800 rounded-md shadow-md object-fill max-w-[60px] h-[60px]"
                 />
                 <div>
                   <h2 className="font-semibold mb-1">{project.name}</h2>
