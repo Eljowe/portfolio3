@@ -51,6 +51,10 @@ body::after {
 	background-color: rgb(65, 65, 65);
 }
 
+.text-segment a {
+  color: rgb(251, 255, 0);
+}
+
 /* Navbar */
 
 .Navbar *{
