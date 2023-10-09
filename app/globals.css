@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 body {
-  position:relative;
+  position: relative;
   margin: 0;
   text-align: center;
   background: url("/bg.jpg") no-repeat center center fixed;
@@ -11,44 +11,41 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 pre {
   border: #5a5c40 1px solid;
   border-radius: 0.5rem;
-  max-width:100%;
+  max-width: 100%;
 }
 
 body::after {
-  position:fixed;
-  content:"";
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:-1;
-  background:rgba(0, 0, 0, 0.9);
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.9);
 }
 
-::-webkit-scrollbar-track
-{
-	background-color: #1D1D1D;
+::-webkit-scrollbar-track {
+  background-color: #1d1d1d;
 }
 
- ::-webkit-scrollbar
-{
-	width: 12px;
-    height: 12px;
-	background-color: rgb(19, 19, 19);
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(19, 19, 19);
 }
 
- ::-webkit-scrollbar-thumb
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
-	background-color: rgb(65, 65, 65);
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: rgb(65, 65, 65);
 }
 
 .text-segment a {
@@ -57,7 +54,7 @@ body::after {
 
 /* Navbar */
 
-.Navbar *{
+.Navbar * {
   overflow: unset;
 }
 
@@ -74,20 +71,20 @@ body::after {
 }
 
 .NavbarScrolled {
-  position:fixed;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
   left: 0;
   position: fixed;
-  box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.88);
-  background-color:#1D1D1D;
+  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.88);
+  background-color: #1d1d1d;
   z-index: 20;
   height: 60px;
 }
 
-.NavbarScrolled *{
+.NavbarScrolled * {
   overflow: unset;
 }
 
@@ -132,7 +129,7 @@ body::after {
   display: flex;
   align-items: flex-start;
   position: absolute;
-  left: 10px
+  left: 10px;
 }
 
 .BsX {
@@ -140,7 +137,6 @@ body::after {
   margin-top: -5px;
   cursor: pointer;
 }
-
 
 .crossIconButton {
   margin: 0.5vh;
