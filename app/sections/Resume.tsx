@@ -2,7 +2,7 @@ import React from "react";
 
 const Resume = () => {
   return (
-    <div id="resume" className="max-w-[1000px] text-left pt-10 sm:text-xl font-extralight">
+    <div id="resume" className="max-w-[1000px] text-left pt-10 sm:text-xl font-extralight pb-20">
       <h1 className="text-2xl font-normal mb-6 text-[#eff876]">Resume</h1>
       <div className="flex flex-col sm:flex-row">
         <div className="sm:mr-10" id="mainresume">
