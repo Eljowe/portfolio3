@@ -5,10 +5,7 @@ type BurgerNavbarProps = {
   isScrolled: boolean;
 };
 
-const BurgerNavbar: React.FC<BurgerNavbarProps> = ({
-  toggleMenu,
-  isScrolled,
-}) => {
+const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) => {
   return (
     <div className={`z-100 ${isScrolled ? "NavbarScrolled" : "Navbar"}`}>
       <nav>

@@ -15,9 +15,7 @@ export default function Project() {
         <h1 className="text-2xl text-left font-normal mb-4 text-[#eff876]">
           Random stuff I&apos;ve built and tinkered with
         </h1>
-        <p className="text-white mb-4">
-          Here are some small projects I have spent my time with over the years.
-        </p>
+        <p className="text-white mb-4">Here are some small projects I have spent my time with over the years.</p>
       </div>
 
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">

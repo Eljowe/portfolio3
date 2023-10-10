@@ -59,15 +59,7 @@ const Sphere: React.FC<SphereProps> = ({ parent }) => {
     //const progressBar = document.getElementById("progress-bar");
 
     // Create a sphere geometry
-    const sphereg = new THREE.SphereGeometry(
-      90,
-      15,
-      17,
-      0,
-      2 * Math.PI,
-      0,
-      5.7428
-    );
+    const sphereg = new THREE.SphereGeometry(90, 15, 17, 0, 2 * Math.PI, 0, 5.7428);
     const sphereM = new THREE.MeshBasicMaterial({ color: insidecolor });
     const spheremesh = new THREE.Mesh(sphereg, sphereM);
 

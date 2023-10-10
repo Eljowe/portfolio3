@@ -24,8 +24,7 @@ const project = {
       name: "slug",
       title: "Slug",
       type: "slug",
-      description:
-        "Add a custom slug for the URL or generate one from the name",
+      description: "Add a custom slug for the URL or generate one from the name",
       options: { source: "name" },
       validation: (rule) => rule.required(),
     }),
@@ -60,51 +59,51 @@ const project = {
       description: "Write a full description about this project",
       of: [
         {
-          type: 'block',
+          type: "block",
           styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H1', value: 'h1'},
-            {title: 'H2', value: 'h2'},
-            {title: 'H3', value: 'h3'},
-            {title: 'H4', value: 'h4'},
-            {title: 'H5', value: 'h5'},
-            {title: 'H6', value: 'h6'},
-            {title: 'Quote', value: 'blockquote'}
-          ]
+            { title: "Normal", value: "normal" },
+            { title: "H1", value: "h1" },
+            { title: "H2", value: "h2" },
+            { title: "H3", value: "h3" },
+            { title: "H4", value: "h4" },
+            { title: "H5", value: "h5" },
+            { title: "H6", value: "h6" },
+            { title: "Quote", value: "blockquote" },
+          ],
         },
         {
-          type: 'image'
+          type: "image",
         },
         {
-          type: 'code',
+          type: "code",
           options: {
-            language: 'javascript',
+            language: "javascript",
             languageAlternatives: [
-              {title: 'Javascript', value: 'javascript'},
-              {title: 'HTML', value: 'html'},
-              {title: 'CSS', value: 'css'},
-              {title: 'Typescript', value: 'typescript'},
-              {title: 'Python', value: 'python'},
-              {title: 'Dart', value: 'dart'}
+              { title: "Javascript", value: "javascript" },
+              { title: "HTML", value: "html" },
+              { title: "CSS", value: "css" },
+              { title: "Typescript", value: "typescript" },
+              { title: "Python", value: "python" },
+              { title: "Dart", value: "dart" },
             ],
             withFilename: true,
           },
-        }
+        },
       ],
     },
     {
-      type: 'code',
-      name: 'myCodeField1',
-      title: 'Code with all options',
+      type: "code",
+      name: "myCodeField1",
+      title: "Code with all options",
       options: {
-        language: 'javascript',
+        language: "javascript",
         languageAlternatives: [
-          {title: 'Javascript', value: 'javascript'},
-          {title: 'HTML', value: 'html'},
-          {title: 'CSS', value: 'css'},
-          {title: 'Typescript', value: 'typescript'},
-          {title: 'Python', value: 'python'},
-          {title: 'Dart', value: 'dart'}
+          { title: "Javascript", value: "javascript" },
+          { title: "HTML", value: "html" },
+          { title: "CSS", value: "css" },
+          { title: "Typescript", value: "typescript" },
+          { title: "Python", value: "python" },
+          { title: "Dart", value: "dart" },
         ],
         withFilename: true,
       },

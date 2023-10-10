@@ -21,12 +21,7 @@ export default function Home() {
   const titleref = useRef(null);
 
   useEffect(() => {
-    if (
-      sphere1.current &&
-      sphere2.current &&
-      sphere3.current &&
-      titleref.current
-    ) {
+    if (sphere1.current && sphere2.current && sphere3.current && titleref.current) {
       const tl1 = gsap.timeline({
         defaults: { ease: "rough.inOut", duration: 1.5 },
       });

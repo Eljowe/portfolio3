@@ -4,7 +4,7 @@ import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import urlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/lib/client";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { SanityImageAsset, getImageDimensions } from "@sanity/asset-utils";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -35,12 +35,7 @@ const SampleImageComponent: FC<SampleImageProps> = ({ value }) => {
 
   return (
     <img
-      src={urlBuilder(client)
-        .image(value)
-        .width(800)
-        .fit("max")
-        .auto("format")
-        .url()}
+      src={urlBuilder(client).image(value).width(800).fit("max").auto("format").url()}
       alt={"image"}
       width={2000}
       height={2000}
@@ -144,10 +139,7 @@ export default function Project({ params }: Props) {
           alt={project.coverImage?.alt || project.name}
         />
         <div className="flex flex-row justify-between w-full mt-8">
-          <a
-            href="/#projects"
-            className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
-          >
+          <a href="/#projects" className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">
             Go Back
           </a>
           {project.projectUrl ? (
