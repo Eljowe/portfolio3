@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="theme-color" content="#1d1d1d"></meta>
-        <link rel="icon" href="/sphere.png" type="image/png" sizes="32x32" />
+        <link rel="icon" type="image/png" href='/sphere.PNG sizes="32x32"' />
       </head>
       <body className={`debug-screens1 ${red_hat.className}`}>{children}</body>
     </html>
