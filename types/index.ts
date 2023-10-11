@@ -6,6 +6,7 @@ export type ProjectType = {
   slug: string;
   tagline: string;
   projectUrl: string;
+  githubUrl: string;
   logo: string;
   coverImage: {
     alt: string | null;

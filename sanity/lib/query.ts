@@ -21,6 +21,7 @@ export async function getSingleProject(unslug: string) {
         _id,
         name,
         projectUrl,
+        githubUrl,
         coverImage { alt, "image": asset->url },
         tagline,
         description
@@ -35,6 +36,7 @@ export async function getSingleProject(unslug: string) {
         _id,
         name,
         projectUrl,
+        githubUrl,
         coverImage { alt, "image": asset->url },
         tagline,
         description

@@ -8,6 +8,7 @@ import BurgerNavbar from "./components/Navbar";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Resume from "./sections/Resume";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -279,6 +280,14 @@ export default function Home() {
       >
         <Resume />
       </section>
+      <footer className="flex flex-row items-center justify-center w-full h-[100px] sm:h-[180px] bg-[#eff876] z-10 text-black">
+        <a href="https://www.linkedin.com/in/joelwickstrom/" target="_blank" className="m-4">
+          <BsLinkedin className="w-10 h-10" />
+        </a>
+        <a href="https://github.com/Eljowe" target="_blank" className="m-4">
+          <BsGithub className="w-10 h-10" />
+        </a>
+      </footer>
     </main>
   );
 }

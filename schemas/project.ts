@@ -39,6 +39,11 @@ const project = {
       type: "url",
     },
     {
+      name: "githubUrl",
+      title: "Github URL",
+      type: "url",
+    },
+    {
       name: "coverImage",
       title: "Cover Image",
       type: "image",

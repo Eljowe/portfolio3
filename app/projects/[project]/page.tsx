@@ -138,19 +138,32 @@ export default function Project({ params }: Props) {
           src={project.coverImage?.image}
           alt={project.coverImage?.alt || project.name}
         />
-        <div className="flex flex-row justify-between w-full mt-8">
+        <div className="flex flex-row justify-evenly w-full mt-8">
           <a href="/#projects" className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">
             Go Back
           </a>
+          {project.githubUrl ? (
+            <a
+              href={project.githubUrl}
+              rel="noreferrer noopener"
+              className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
+            >
+              Github repository
+            </a>
+          ) : (
+            <span className="border-b border-zinc-500 text-zinc-500 p-1">Github repository</span>
+          )}
           {project.projectUrl ? (
             <a
               href={project.projectUrl}
               rel="noreferrer noopener"
               className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
             >
-              Open project website
+              Project website
             </a>
-          ) : null}
+          ) : (
+            <span className="border-b border-zinc-500 text-zinc-500 p-1">Project website</span>
+          )}
         </div>
         <div className="text-segment flex flex-col max-w-[800px] w-[100%] mx-auto gap-y-6 mt-8 leading-7 text-justify">
           <PortableText
