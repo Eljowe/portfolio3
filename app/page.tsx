@@ -56,7 +56,7 @@ export default function Home() {
       tl3.fromTo(
         sphere3.current,
         { y: window.innerHeight / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.5, delay: 0.15, ease: "power4.inOut" }
+        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: "power4.inOut" }
       );
       tl4
         .fromTo(
@@ -250,14 +250,14 @@ export default function Home() {
         <div
           ref={sphere2}
           id="spherediv2"
-          className="fixed pointer-events-none top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[30vh] sm:h-[30vh] transform -translate-y-1/2 opacity-50 z-0"
+          className="fixed pointer-events-none top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[30vh] sm:h-[30vh] transform -translate-y-1/2 opacity-70 z-0"
         >
           <Sphere parent="spherediv2" />
         </div>
         <div
           ref={sphere3}
           id="spherediv3"
-          className="fixed pointer-events-none top-2/3 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[60vh] sm:h-[60vh] sm:top-[90vh] transform -translate-y-1/2 opacity-50 z-0"
+          className="fixed pointer-events-none top-2/3 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[60vh] sm:h-[60vh] sm:top-[90vh] transform -translate-y-1/2 opacity-60 z-0"
         >
           <Sphere parent="spherediv3" />
         </div>
