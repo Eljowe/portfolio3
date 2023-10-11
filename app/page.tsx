@@ -270,7 +270,7 @@ export default function Home() {
       </section>
       <section
         id="projects"
-        className="min-h-screen flex p-6 bg-[#0c0c0c] w-full items-center justify-center text-[#eff876] z-10"
+        className="min-h-screen flex p-6 bg-gradient-to-b bg-[#181818] w-full items-center justify-center text-[#eff876] z-10"
       >
         <Projects />
       </section>

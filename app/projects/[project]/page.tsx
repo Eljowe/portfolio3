@@ -146,6 +146,7 @@ export default function Project({ params }: Props) {
             <a
               href={project.githubUrl}
               rel="noreferrer noopener"
+              target="_blank"
               className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
             >
               Github repository
@@ -157,6 +158,7 @@ export default function Project({ params }: Props) {
             <a
               href={project.projectUrl}
               rel="noreferrer noopener"
+              target="_blank"
               className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
             >
               Project website
