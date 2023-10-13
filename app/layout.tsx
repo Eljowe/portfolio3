@@ -1,12 +1,12 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Red_Hat_Display } from "next/font/google";
+import './globals.css';
+import type { Metadata } from 'next';
+import { Red_Hat_Display } from 'next/font/google';
 
-const red_hat = Red_Hat_Display({ subsets: ["latin"] });
+const red_hat = Red_Hat_Display({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Joel's website",
-  description: "Generated with create next app",
+  description: 'Generated with create next app',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
