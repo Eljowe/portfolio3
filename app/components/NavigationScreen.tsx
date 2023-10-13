@@ -1,4 +1,4 @@
-import { BsX } from "react-icons/bs";
+import { BsX } from 'react-icons/bs';
 
 type NavigationScreenProps = {
   toggleMenu: () => void;

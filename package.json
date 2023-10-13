@@ -45,6 +45,7 @@
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10",
     "@types/react-syntax-highlighter": "^15.5.7",
-    "@types/three": "^0.156.0"
+    "@types/three": "^0.156.0",
+    "prettier": "3.0.3"
   }
 }

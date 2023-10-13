@@ -1,19 +1,19 @@
-"use client";
-import Sphere from "./components/Sphere";
-import { gsap } from "gsap";
-import { useRef, useState, useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import NavigationScreen from "./components/NavigationScreen";
-import BurgerNavbar from "./components/Navbar";
-import About from "./sections/About";
-import Projects from "./sections/Projects";
-import Resume from "./sections/Resume";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
+'use client';
+import Sphere from './components/Sphere';
+import { gsap } from 'gsap';
+import { useRef, useState, useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import NavigationScreen from './components/NavigationScreen';
+import BurgerNavbar from './components/Navbar';
+import About from './sections/About';
+import Projects from './sections/Projects';
+import Resume from './sections/Resume';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState("closed");
+  const [menuOpen, setMenuOpen] = useState('closed');
   const [isScrolled, setIsScrolled] = useState(false);
   const [gsapMenu, setGsapMenu] = useState(false);
   const sphere1 = useRef(null);
@@ -24,16 +24,16 @@ export default function Home() {
   useEffect(() => {
     if (sphere1.current && sphere2.current && sphere3.current && titleref.current) {
       const tl1 = gsap.timeline({
-        defaults: { ease: "rough.inOut", duration: 1.5 },
+        defaults: { ease: 'rough.inOut', duration: 1.5 },
       });
       const tl2 = gsap.timeline({
-        defaults: { ease: "rough.inOut", duration: 1.5 },
+        defaults: { ease: 'rough.inOut', duration: 1.5 },
       });
       const tl3 = gsap.timeline({
-        defaults: { ease: "rough.inOut", duration: 1.5 },
+        defaults: { ease: 'rough.inOut', duration: 1.5 },
       });
       const tl4 = gsap.timeline({
-        defaults: { ease: "rough.inOut", duration: 1.5 },
+        defaults: { ease: 'rough.inOut', duration: 1.5 },
       });
       //const anim = gsap.fromTo("#about", {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
       /*
@@ -46,26 +46,26 @@ export default function Home() {
       tl1.fromTo(
         sphere1.current,
         { x: window.innerWidth / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.7, delay: 0.15, ease: "power4.inOut" }
+        { x: 0, y: 0, opacity: 0.7, delay: 0.15, ease: 'power4.inOut' }
       );
       tl2.fromTo(
         sphere2.current,
         { y: -window.innerHeight / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: "power4.inOut" }
+        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: 'power4.inOut' }
       );
       tl3.fromTo(
         sphere3.current,
         { y: window.innerHeight / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: "power4.inOut" }
+        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: 'power4.inOut' }
       );
       tl4
         .fromTo(
           titleref.current,
           { x: -window.innerWidth / 2, opacity: 0 },
-          { x: 0, y: 0, opacity: 1, delay: 0.15, ease: "power4.inOut" }
+          { x: 0, y: 0, opacity: 1, delay: 0.15, ease: 'power4.inOut' }
         )
         .then(() => {
-          document.addEventListener("mousemove", mouseMoveFunc);
+          document.addEventListener('mousemove', mouseMoveFunc);
         });
 
       function mouseMoveFunc(e: MouseEvent) {
@@ -78,7 +78,7 @@ export default function Home() {
             duration: 1,
             x: moveX,
             y: moveY,
-            ease: "slow",
+            ease: 'slow',
             stagger: 0.008,
             overwrite: true,
           });
@@ -86,7 +86,7 @@ export default function Home() {
             duration: 1,
             x: -moveX,
             y: -moveY,
-            ease: "slow",
+            ease: 'slow',
             stagger: 0.008,
             overwrite: true,
           });
@@ -94,7 +94,7 @@ export default function Home() {
             duration: 1,
             x: -moveX * 2,
             y: -moveY * 1,
-            ease: "slow",
+            ease: 'slow',
             stagger: 0.008,
             overwrite: true,
           });
@@ -102,7 +102,7 @@ export default function Home() {
             duration: 0.5,
             x: -moveX * 0.2,
             y: -moveY * 0.2,
-            ease: "slow",
+            ease: 'slow',
             stagger: 0.008,
             overwrite: true,
           });
@@ -116,19 +116,19 @@ export default function Home() {
   }, [sphere1, sphere2, sphere3, titleref]);
 
   const toggleMenu = () => {
-    setMenuOpen((curr) => (curr === "open" ? "closed" : "open"));
-    setGsapMenu((curr) => !curr);
+    setMenuOpen(curr => (curr === 'open' ? 'closed' : 'open'));
+    setGsapMenu(curr => !curr);
     if (gsapMenu) {
-      gsap.timeline().to(".NavigationScreen", {
+      gsap.timeline().to('.NavigationScreen', {
         duration: 0.3,
-        x: "-100%",
-        ease: "power2.inOut",
+        x: '-100%',
+        ease: 'power2.inOut',
       });
     } else {
-      gsap.timeline().to(".NavigationScreen", {
+      gsap.timeline().to('.NavigationScreen', {
         duration: 0.3,
-        x: "100vw",
-        ease: "power2.inOut",
+        x: '100vw',
+        ease: 'power2.inOut',
       });
     }
   };
@@ -141,18 +141,18 @@ export default function Home() {
         setIsScrolled(false);
       }
     };
-    window.addEventListener("scroll", checkScroll);
+    window.addEventListener('scroll', checkScroll);
 
     return () => {
-      window.removeEventListener("scroll", checkScroll);
+      window.removeEventListener('scroll', checkScroll);
     };
   }, [isScrolled]);
 
   useEffect(() => {
-    if (menuOpen === "open") {
-      document.body.style.overflow = "hidden";
+    if (menuOpen === 'open') {
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
   }, [menuOpen]);
 
@@ -164,9 +164,9 @@ export default function Home() {
         { opacity: 0.7, x: 0, y: 0 },
         {
           scrollTrigger: {
-            trigger: ".page",
-            start: "+=50",
-            end: "+=105%",
+            trigger: '.page',
+            start: '+=50',
+            end: '+=105%',
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -180,9 +180,9 @@ export default function Home() {
         { opacity: 1, x: 0, y: 0 },
         {
           scrollTrigger: {
-            trigger: ".page",
-            start: "+=50",
-            end: "+=105%",
+            trigger: '.page',
+            start: '+=50',
+            end: '+=105%',
             scrub: true,
             invalidateOnRefresh: true,
             //markers: true,
@@ -197,9 +197,9 @@ export default function Home() {
         { opacity: 0.6, x: 0, y: 0 },
         {
           scrollTrigger: {
-            trigger: ".page",
-            start: "+=50",
-            end: "+=105%",
+            trigger: '.page',
+            start: '+=50',
+            end: '+=105%',
             scrub: true,
             invalidateOnRefresh: true,
             //markers: true,
@@ -214,9 +214,9 @@ export default function Home() {
         { opacity: 0.5, x: 0, y: 0 },
         {
           scrollTrigger: {
-            trigger: ".page",
-            start: "+=50",
-            end: "+=105%",
+            trigger: '.page',
+            start: '+=50',
+            end: '+=105%',
             scrub: true,
             invalidateOnRefresh: true,
             //markers: true,

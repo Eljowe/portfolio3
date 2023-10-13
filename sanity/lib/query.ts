@@ -1,5 +1,5 @@
-import { groq } from "next-sanity";
-import { client } from "./client";
+import { groq } from 'next-sanity';
+import { client } from './client';
 
 export async function getProjects() {
   return client.fetch(
@@ -14,7 +14,7 @@ export async function getProjects() {
 }
 
 export async function getSingleProject(unslug: string) {
-  let slug = "/" + unslug;
+  let slug = '/' + unslug;
   try {
     const result = await client.fetch(
       groq`*[_type == "project" && slug.current == $slug][0]{
@@ -49,7 +49,7 @@ export async function getSingleProject(unslug: string) {
 
     return result; // Return the fetched project data
   } catch (error) {
-    console.error("Error fetching single project:", error);
+    console.error('Error fetching single project:', error);
     throw error;
   }
 }

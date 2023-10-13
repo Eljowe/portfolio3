@@ -1,17 +1,17 @@
-"use client";
-import { getSingleProject } from "@/sanity/lib/query";
-import type { ProjectType } from "@/types";
-import { PortableText } from "@portabletext/react";
-import urlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/client";
-import { useState, useEffect } from "react";
-import { SanityImageAsset, getImageDimensions } from "@sanity/asset-utils";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import NavigationScreen from "../../components/NavigationScreen";
-import BurgerNavbar from "../../components/Navbar";
-import { gsap } from "gsap";
-import { FC } from "react";
+'use client';
+import { getSingleProject } from '@/sanity/lib/query';
+import type { ProjectType } from '@/types';
+import { PortableText } from '@portabletext/react';
+import urlBuilder from '@sanity/image-url';
+import { client } from '@/sanity/lib/client';
+import { useState, useEffect } from 'react';
+import { SanityImageAsset, getImageDimensions } from '@sanity/asset-utils';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import NavigationScreen from '../../components/NavigationScreen';
+import BurgerNavbar from '../../components/Navbar';
+import { gsap } from 'gsap';
+import { FC } from 'react';
 
 type Props = {
   params: {
@@ -35,8 +35,8 @@ const SampleImageComponent: FC<SampleImageProps> = ({ value }) => {
 
   return (
     <img
-      src={urlBuilder(client).image(value).width(800).fit("max").auto("format").url()}
-      alt={"image"}
+      src={urlBuilder(client).image(value).width(800).fit('max').auto('format').url()}
+      alt={'image'}
       width={2000}
       height={2000}
       loading="lazy"
@@ -51,7 +51,7 @@ const SampleCodeComponent: FC<SampleCodeProps> = ({ value }) => {
   const { language, code } = value;
 
   return (
-    <SyntaxHighlighter language={language || "text"} style={vs2015}>
+    <SyntaxHighlighter language={language || 'text'} style={vs2015}>
       {code}
     </SyntaxHighlighter>
   );
@@ -82,7 +82,7 @@ export default function Project({ params }: Props) {
   const [gsapMenu, setGsapMenu] = useState(false);
 
   useEffect(() => {
-    getSingleProject(slug).then((response) => setProject(response));
+    getSingleProject(slug).then(response => setProject(response));
   }, [slug]);
 
   useEffect(() => {
@@ -93,10 +93,10 @@ export default function Project({ params }: Props) {
         setIsScrolled(false);
       }
     };
-    window.addEventListener("scroll", checkScroll);
+    window.addEventListener('scroll', checkScroll);
 
     return () => {
-      window.removeEventListener("scroll", checkScroll);
+      window.removeEventListener('scroll', checkScroll);
     };
   }, [isScrolled]);
 
@@ -105,18 +105,18 @@ export default function Project({ params }: Props) {
   }
 
   const toggleMenu = () => {
-    setGsapMenu((curr) => !curr);
+    setGsapMenu(curr => !curr);
     if (gsapMenu) {
-      gsap.timeline().to(".NavigationScreen", {
+      gsap.timeline().to('.NavigationScreen', {
         duration: 0.3,
-        x: "-100%",
-        ease: "power2.inOut",
+        x: '-100%',
+        ease: 'power2.inOut',
       });
     } else {
-      gsap.timeline().to(".NavigationScreen", {
+      gsap.timeline().to('.NavigationScreen', {
         duration: 0.3,
-        x: "100vw",
-        ease: "power2.inOut",
+        x: '100vw',
+        ease: 'power2.inOut',
       });
     }
   };

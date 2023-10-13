@@ -1,5 +1,5 @@
-import React from "react";
-import { LaunchIcon } from "@sanity/icons";
+import React from 'react';
+import { LaunchIcon } from '@sanity/icons';
 
 interface ExternalLinkRendererProps {
   renderDefault: (props: any) => React.ReactNode; // You may need to adjust the type of renderDefault
@@ -9,7 +9,7 @@ interface ExternalLinkRendererProps {
   };
 }
 
-const ExternalLinkRenderer: React.FC<ExternalLinkRendererProps> = (props) => {
+const ExternalLinkRenderer: React.FC<ExternalLinkRendererProps> = props => {
   return (
     <span>
       {props.renderDefault(props)}

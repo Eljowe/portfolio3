@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 interface SphereProps {
   parent: string;
@@ -32,7 +32,7 @@ const Sphere: React.FC<SphereProps> = ({ parent }) => {
     container!.appendChild(renderer.domElement);
     camera.aspect = container!.offsetWidth / container!.offsetHeight;
     camera.updateProjectionMatrix();
-    sphereRef.current!.innerHTML = "";
+    sphereRef.current!.innerHTML = '';
     sphereRef.current!.appendChild(renderer.domElement);
     renderer.setClearColor(0xffffff, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -90,7 +90,7 @@ const Sphere: React.FC<SphereProps> = ({ parent }) => {
     dirLight.shadow.mapSize.set(1024, 1024);
     scene.add(dirLight);
 
-    window.addEventListener("resize", onWindowResize, false);
+    window.addEventListener('resize', onWindowResize, false);
 
     function onWindowResize() {
       renderer.setPixelRatio(window.devicePixelRatio);

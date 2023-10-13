@@ -1,12 +1,12 @@
-import { getProjects } from "@/sanity/lib/query";
-import type { ProjectType } from "@/types";
-import { useState, useEffect } from "react";
+import { getProjects } from '@/sanity/lib/query';
+import type { ProjectType } from '@/types';
+import { useState, useEffect } from 'react';
 
 export default function Project() {
   const [projects, setProjects] = useState<ProjectType[]>();
 
   useEffect(() => {
-    getProjects().then((response) => setProjects(response));
+    getProjects().then(response => setProjects(response));
   }, []);
 
   return (
@@ -20,7 +20,7 @@ export default function Project() {
 
       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
         {projects
-          ? projects.map((project) => (
+          ? projects.map(project => (
               <a
                 href={`/projects/${project.slug}`}
                 key={project._id}
