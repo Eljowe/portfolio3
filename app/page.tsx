@@ -1,5 +1,4 @@
 'use client';
-import Sphere from './components/Sphere';
 import { gsap } from 'gsap';
 import { useRef, useState, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,6 +8,7 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import Resume from './sections/Resume';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import ThreeScene from './components/ThreeScene';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,23 +16,15 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState('closed');
   const [isScrolled, setIsScrolled] = useState(false);
   const [gsapMenu, setGsapMenu] = useState(false);
-  const sphere1 = useRef(null);
-  const sphere2 = useRef(null);
-  const sphere3 = useRef(null);
   const titleref = useRef(null);
+  const pointref = useRef(null);
 
   useEffect(() => {
-    if (sphere1.current && sphere2.current && sphere3.current && titleref.current) {
+    if (titleref.current && pointref.current) {
       const tl1 = gsap.timeline({
         defaults: { ease: 'rough.inOut', duration: 1.5 },
       });
       const tl2 = gsap.timeline({
-        defaults: { ease: 'rough.inOut', duration: 1.5 },
-      });
-      const tl3 = gsap.timeline({
-        defaults: { ease: 'rough.inOut', duration: 1.5 },
-      });
-      const tl4 = gsap.timeline({
         defaults: { ease: 'rough.inOut', duration: 1.5 },
       });
       //const anim = gsap.fromTo("#about", {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
@@ -43,26 +35,22 @@ export default function Home() {
         toggleActions: 'play none none none',
         once: true,
       }); */
-      tl1.fromTo(
-        sphere1.current,
-        { x: window.innerWidth / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.7, delay: 0.15, ease: 'power4.inOut' }
-      );
-      tl2.fromTo(
-        sphere2.current,
-        { y: -window.innerHeight / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: 'power4.inOut' }
-      );
-      tl3.fromTo(
-        sphere3.current,
-        { y: window.innerHeight / 2, opacity: 0 },
-        { x: 0, y: 0, opacity: 0.6, delay: 0.15, ease: 'power4.inOut' }
-      );
-      tl4
+
+      tl1
         .fromTo(
           titleref.current,
           { x: -window.innerWidth / 2, opacity: 0 },
           { x: 0, y: 0, opacity: 1, delay: 0.15, ease: 'power4.inOut' }
+        )
+        .then(() => {
+          document.addEventListener('mousemove', mouseMoveFunc);
+        });
+
+      tl2
+        .fromTo(
+          pointref.current,
+          { x: window.innerWidth / 2, opacity: 0 },
+          { x: 0, y: 0, opacity: 1, delay: 0.1, ease: 'power4.inOut' }
         )
         .then(() => {
           document.addEventListener('mousemove', mouseMoveFunc);
@@ -82,26 +70,10 @@ export default function Home() {
             stagger: 0.008,
             overwrite: true,
           });
-          gsap.to(sphere1.current, {
+          gsap.to(pointref.current, {
             duration: 1,
-            x: -moveX,
-            y: -moveY,
-            ease: 'slow',
-            stagger: 0.008,
-            overwrite: true,
-          });
-          gsap.to(sphere2.current, {
-            duration: 1,
-            x: -moveX * 2,
-            y: -moveY * 1,
-            ease: 'slow',
-            stagger: 0.008,
-            overwrite: true,
-          });
-          gsap.to(sphere3.current, {
-            duration: 0.5,
-            x: -moveX * 0.2,
-            y: -moveY * 0.2,
+            x: -moveX * 0.7,
+            y: -moveY * 0.7,
             ease: 'slow',
             stagger: 0.008,
             overwrite: true,
@@ -113,7 +85,7 @@ export default function Home() {
         return window.scrollY > 0;
       }
     }
-  }, [sphere1, sphere2, sphere3, titleref]);
+  }, [titleref]);
 
   const toggleMenu = () => {
     setMenuOpen(curr => (curr === 'open' ? 'closed' : 'open'));
@@ -160,22 +132,6 @@ export default function Home() {
     gsap
       .timeline()
       .fromTo(
-        sphere1.current,
-        { opacity: 0.7, x: 0, y: 0 },
-        {
-          scrollTrigger: {
-            trigger: '.page',
-            start: '+=50',
-            end: '+=105%',
-            scrub: true,
-            invalidateOnRefresh: true,
-          },
-          opacity: 0,
-          zIndex: 0,
-          x: 300,
-        }
-      )
-      .fromTo(
         titleref.current,
         { opacity: 1, x: 0, y: 0 },
         {
@@ -193,8 +149,8 @@ export default function Home() {
         }
       )
       .fromTo(
-        sphere2.current,
-        { opacity: 0.6, x: 0, y: 0 },
+        pointref.current,
+        { opacity: 1, x: 0, y: 0 },
         {
           scrollTrigger: {
             trigger: '.page',
@@ -206,24 +162,7 @@ export default function Home() {
           },
           opacity: 0,
           zIndex: 0,
-          y: -200,
-        }
-      )
-      .fromTo(
-        sphere3.current,
-        { opacity: 0.5, x: 0, y: 0 },
-        {
-          scrollTrigger: {
-            trigger: '.page',
-            start: '+=50',
-            end: '+=105%',
-            scrub: true,
-            invalidateOnRefresh: true,
-            //markers: true,
-          },
-          opacity: 0,
-          zIndex: 0,
-          y: 200,
+          x: 200,
         }
       );
   });
@@ -240,26 +179,8 @@ export default function Home() {
           <h1 className="main-title">PORTFOLIO</h1>
           <h1 className="main-title">JOEL WICKSTRÖM</h1>
         </div>
-        <div
-          ref={sphere1}
-          id="spherediv"
-          className="fixed pointer-events-none top-1/2 left-[70%] w-[70vh] h-[70vh] sm:left-[70%] sm:w-[80vh] sm:h-[80vh] transform -translate-y-1/2 opacity-70 z-0"
-        >
-          <Sphere parent="spherediv" />
-        </div>
-        <div
-          ref={sphere2}
-          id="spherediv2"
-          className="fixed pointer-events-none top-1/4 right-[30%] w-[35vh] h-[35vh] sm:right-[45%] sm:w-[30vh] sm:h-[30vh] transform -translate-y-1/2 opacity-70 z-0"
-        >
-          <Sphere parent="spherediv2" />
-        </div>
-        <div
-          ref={sphere3}
-          id="spherediv3"
-          className="fixed pointer-events-none top-2/3 right-[40%] w-[90vh] h-[90vh] sm:right-[50%] sm:w-[60vh] sm:h-[60vh] sm:top-[90vh] transform -translate-y-1/2 opacity-60 z-0"
-        >
-          <Sphere parent="spherediv3" />
+        <div ref={pointref} id="threeSceneDiv" className="w-[120vw] h-[120vh] fixed left-0 sm:left-[-200px] z-0">
+          <ThreeScene parent="threeSceneDiv" />
         </div>
       </section>
       <section
