@@ -179,7 +179,11 @@ export default function Home() {
           <h1 className="main-title">PORTFOLIO</h1>
           <h1 className="main-title">JOEL WICKSTRÖM</h1>
         </div>
-        <div ref={pointref} id="threeSceneDiv" className="w-[120vw] h-[120vh] fixed left-0 sm:left-[-200px] z-0">
+        <div
+          ref={pointref}
+          id="threeSceneDiv"
+          className="pointer-events-none w-[120vw] h-[120vh] fixed left-0 sm:left-[-200px] z-0"
+        >
           <ThreeScene parent="threeSceneDiv" />
         </div>
       </section>
