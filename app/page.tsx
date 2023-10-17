@@ -201,12 +201,12 @@ export default function Home() {
       >
         <Resume />
       </section>
-      <footer className="flex flex-row items-center justify-center w-full h-[100px] sm:h-[180px] bg-[#eff876] z-10 text-black">
+      <footer className="flex flex-row items-center justify-center w-full h-[90px] bg-[#181818] z-10 text-white">
         <a href="https://www.linkedin.com/in/joelwickstrom/" target="_blank" className="m-4">
-          <BsLinkedin className="w-10 h-10" />
+          <BsLinkedin className="w-8 h-8" />
         </a>
         <a href="https://github.com/Eljowe" target="_blank" className="m-4">
-          <BsGithub className="w-10 h-10" />
+          <BsGithub className="w-8 h-8" />
         </a>
       </footer>
     </main>
