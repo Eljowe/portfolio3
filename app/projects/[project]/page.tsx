@@ -138,7 +138,7 @@ export default function Project({ params }: Props) {
           src={project.coverImage?.image}
           alt={project.coverImage?.alt || project.name}
         />
-        <div className="flex flex-row justify-evenly w-full mt-8">
+        <div className="flex flex-row justify-evenly w-full mt-8 text-sm sm:text-xl">
           <a href="/#projects" className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">
             Go Back
           </a>

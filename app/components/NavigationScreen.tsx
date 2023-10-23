@@ -18,7 +18,7 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#about" onClick={toggleMenu}>
+            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#aboutsection" onClick={toggleMenu}>
               About
             </a>
           </li>
