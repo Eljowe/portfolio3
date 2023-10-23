@@ -5,8 +5,8 @@ import { Red_Hat_Display } from 'next/font/google';
 const red_hat = Red_Hat_Display({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Joel's portfolio",
-  description: 'Generated with create next app',
+  title: "Joel Wickström's portfolio",
+  description: 'My portfolio website',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
