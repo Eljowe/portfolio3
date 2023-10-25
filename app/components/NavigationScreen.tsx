@@ -7,28 +7,47 @@ type NavigationScreenProps = {
 const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
   return (
     <div className="NavigationScreen z-20">
-      <a className="NavigationScreenCross" onClick={toggleMenu}>
+      <a
+        className="NavigationScreenCross transition duration-500 hover:scale-110 hover:text-[#eff876]"
+        onClick={toggleMenu}
+      >
         <BsX className="BsX" size="4rem" />
       </a>
       <nav>
         <ul className="NavList">
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#home" onClick={toggleMenu}>
+            <a
+              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              href="/#home"
+              onClick={toggleMenu}
+            >
               Home
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#aboutsection" onClick={toggleMenu}>
+            <a
+              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              href="/#aboutsection"
+              onClick={toggleMenu}
+            >
               About
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#projects" onClick={toggleMenu}>
+            <a
+              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              href="/#projects"
+              onClick={toggleMenu}
+            >
               Projects
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#resume" onClick={toggleMenu}>
+            <a
+              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              href="/#resume"
+              onClick={toggleMenu}
+            >
               Resume
             </a>
           </li>

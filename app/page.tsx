@@ -205,8 +205,8 @@ export default function Home() {
       >
         <Resume />
       </section>
-      <footer className="z-10 flex h-[90px] w-full flex-row items-center justify-center bg-[#181818] text-white">
-        <a href="https://www.linkedin.com/in/joelwickstrom/" target="_blank" className="m-4">
+      <footer className="justify-left z-10 flex h-[90px] w-full flex-row items-center bg-[#181818] text-white">
+        <a href="https://www.linkedin.com/in/joelwickstrom/" target="_blank" className="m-4 ml-10">
           <BsLinkedin className="h-8 w-8" />
         </a>
         <a href="https://github.com/Eljowe" target="_blank" className="m-4">

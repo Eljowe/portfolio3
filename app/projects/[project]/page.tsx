@@ -139,7 +139,10 @@ export default function Project({ params }: Props) {
           alt={project.coverImage?.alt || project.name}
         />
         <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
-          <a href="/#projects" className="border-b border-[#eff876] p-1 text-white hover:text-[#eff876]">
+          <a
+            href="/#projects"
+            className="border-b border-[#eff876] p-1 text-white transition duration-500 hover:scale-110 hover:text-[#eff876]"
+          >
             Go Back
           </a>
           {project.githubUrl ? (
@@ -147,7 +150,7 @@ export default function Project({ params }: Props) {
               href={project.githubUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="border-b border-[#eff876] p-1 text-white hover:text-[#eff876]"
+              className="border-b border-[#eff876] p-1 text-white transition duration-500 hover:scale-110 hover:text-[#eff876]"
             >
               Github repository
             </a>
@@ -159,7 +162,7 @@ export default function Project({ params }: Props) {
               href={project.projectUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="border-b border-[#eff876] p-1 text-white hover:text-[#eff876]"
+              className="border-b border-[#eff876] p-1 text-white transition duration-500 hover:scale-110 hover:text-[#eff876]"
             >
               Project website
             </a>
