@@ -17,38 +17,38 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
         <ul className="NavList">
           <li>
             <a
-              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
               href="/#home"
               onClick={toggleMenu}
             >
-              Home
+              HOME
             </a>
           </li>
           <li>
             <a
-              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
               href="/#aboutsection"
               onClick={toggleMenu}
             >
-              About
+              ABOUT
             </a>
           </li>
           <li>
             <a
-              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
               href="/#projects"
               onClick={toggleMenu}
             >
-              Projects
+              PROJECTS
             </a>
           </li>
           <li>
             <a
-              className="NavigationScreenItem transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
               href="/#resume"
               onClick={toggleMenu}
             >
-              Resume
+              RESUME
             </a>
           </li>
         </ul>
