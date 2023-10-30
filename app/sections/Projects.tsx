@@ -22,7 +22,7 @@ export default function Project() {
               <a
                 href={`/projects/${project.slug}`}
                 key={project._id}
-                className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-[#1d1d20] p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-zinc-700"
+                className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-[#1d1d20] p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-[#eff876]"
               >
                 <img
                   src={project.logo}

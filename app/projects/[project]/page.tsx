@@ -12,6 +12,7 @@ import NavigationScreen from '../../components/NavigationScreen';
 import BurgerNavbar from '../../components/Navbar';
 import { gsap } from 'gsap';
 import { FC } from 'react';
+import { BsArrowLeft } from 'react-icons/bs';
 
 type Props = {
   params: {
@@ -141,33 +142,34 @@ export default function Project({ params }: Props) {
         <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
           <a
             href="/#projects"
-            className="border-b border-[#eff876] p-1 text-white transition duration-500 hover:scale-110 hover:text-[#eff876]"
+            className="flex flex-row items-center  p-1 text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
           >
-            Go Back
+            <BsArrowLeft className="mr-2" />
+            Back
           </a>
           {project.githubUrl ? (
             <a
               href={project.githubUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="border-b border-[#eff876] p-1 text-white transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              className=" p-1 text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
             >
               Github repository
             </a>
           ) : (
-            <span className="border-b border-zinc-500 p-1 text-zinc-500">Github repository</span>
+            <span className="p-1 text-zinc-500">Github repository</span>
           )}
           {project.projectUrl ? (
             <a
               href={project.projectUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="border-b border-[#eff876] p-1 text-white transition duration-500 hover:scale-110 hover:text-[#eff876]"
+              className=" p-1 text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
             >
               Project website
             </a>
           ) : (
-            <span className="border-b border-zinc-500 p-1 text-zinc-500">Project website</span>
+            <span className=" p-1 text-zinc-500">Project website</span>
           )}
         </div>
         <div className="text-segment mx-auto mt-8 flex w-[100%] max-w-[800px] flex-col gap-y-6 text-justify leading-7">
