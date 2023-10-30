@@ -10,31 +10,29 @@ export default function Project() {
   }, []);
 
   return (
-    <div className="max-w-[1200px] text-justify pt-10 sm:pt-0 sm:text-xl font-extralight">
+    <div className="max-w-[1200px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
-        <h1 className="text-2xl text-left font-normal mb-4 text-[#eff876]">
-          Random stuff I&apos;ve built and tinkered with
-        </h1>
-        <p className="text-white mb-4">Here are some small projects I have spent my time with over the years.</p>
+        <h1 className="mb-4 text-left text-2xl font-normal text-[#eff876]">Projects</h1>
+        <p className="mb-4 text-white">Random stuff I&apos;ve built and tinkered with over the years.</p>
       </div>
 
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
+      <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {projects
           ? projects.map(project => (
               <a
                 href={`/projects/${project.slug}`}
                 key={project._id}
-                className="flex flex-row items-center gap-x-4 bg-[#1d1d20] min-h-[120px] border border-transparent hover:border-zinc-700 p-4 rounded-lg ease-in-out"
+                className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-[#1d1d20] p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-zinc-700"
               >
                 <img
                   src={project.logo}
                   width={100}
                   height={100}
                   alt={project.name}
-                  className="bg-zinc-800 rounded-md shadow-md object-fill max-w-[60px] h-[60px]"
+                  className="h-[60px] max-w-[60px] rounded-md bg-zinc-800 object-fill shadow-md"
                 />
                 <div>
-                  <h2 className="font-semibold mb-1">{project.name}</h2>
+                  <h2 className="mb-1 font-semibold">{project.name}</h2>
                   <div className="text-sm text-zinc-400">{project.tagline}</div>
                 </div>
               </a>

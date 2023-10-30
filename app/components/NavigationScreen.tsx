@@ -17,7 +17,7 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
         <ul className="NavList">
           <li>
             <a
-              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
               href="/#home"
               onClick={toggleMenu}
             >
@@ -26,7 +26,7 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
           </li>
           <li>
             <a
-              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
               href="/#aboutsection"
               onClick={toggleMenu}
             >
@@ -35,7 +35,7 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
           </li>
           <li>
             <a
-              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
               href="/#projects"
               onClick={toggleMenu}
             >
@@ -44,7 +44,7 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
           </li>
           <li>
             <a
-              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:text-white"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
               href="/#resume"
               onClick={toggleMenu}
             >
