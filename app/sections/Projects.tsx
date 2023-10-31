@@ -16,13 +16,13 @@ export default function Project() {
         <p className="mb-4 text-white">Random stuff I&apos;ve built and tinkered with over the years.</p>
       </div>
 
-      <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="group mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {projects
           ? projects.map(project => (
               <a
                 href={`/projects/${project.slug}`}
                 key={project._id}
-                className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-[#1d1d20] p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-[#eff876]"
+                className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-[#1d1d20] p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-[#eff876] hover:!opacity-100 group-hover:opacity-50"
               >
                 <img
                   src={project.logo}
