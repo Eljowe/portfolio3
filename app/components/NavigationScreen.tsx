@@ -1,4 +1,5 @@
 import { BsX } from 'react-icons/bs';
+import { Link } from 'react-scroll';
 
 type NavigationScreenProps = {
   toggleMenu: () => void;
@@ -7,49 +8,57 @@ type NavigationScreenProps = {
 const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
   return (
     <div className="NavigationScreen z-20">
-      <a
+      <button
         className="NavigationScreenCross transition duration-500 hover:scale-110 hover:text-[#eff876]"
         onClick={toggleMenu}
       >
         <BsX className="BsX" size="4rem" />
-      </a>
+      </button>
       <nav>
         <ul className="NavList">
           <li>
-            <a
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              href="/#home"
               onClick={toggleMenu}
             >
               HOME
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              href="/#aboutsection"
+              to="aboutsection"
+              smooth={true}
+              duration={500}
               onClick={toggleMenu}
             >
               ABOUT
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              href="/#projects"
+              to="projects"
+              smooth={true}
+              duration={500}
               onClick={toggleMenu}
             >
               PROJECTS
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              href="/#resume"
+              to="resume"
+              smooth={true}
+              duration={500}
               onClick={toggleMenu}
             >
               RESUME
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
