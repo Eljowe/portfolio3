@@ -126,7 +126,7 @@ export default function Project({ params }: Props) {
     <main className="project mx-auto min-h-screen w-screen overflow-x-hidden bg-[#1d1d1d] pb-10 text-white">
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled} />
       <NavigationScreen toggleMenu={toggleMenu} />
-      <div className="mx-auto mt-10 flex max-w-[800px] flex-col items-center">
+      <div className="mx-auto mt-10 flex w-screen max-w-[800px] flex-col items-center p-4">
         <div className="flex w-full flex-row items-start">
           <h1 className="my-4 text-left text-3xl font-bold text-[#eff876] lg:text-5xl lg:leading-tight">
             {project.name}

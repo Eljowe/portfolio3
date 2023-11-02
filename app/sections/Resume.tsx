@@ -9,7 +9,7 @@ const Resume = () => {
           <h3 className="resumehead border-1 mt-4 w-full border-b border-[#eff876] text-[1.3rem] font-normal text-[#eff876]">
             Education
           </h3>
-          <h3 className="mt-2 text-xl text-[#f87676]">Aalto University</h3>
+          <h3 className="mt-2 text-xl text-[#f7ad58]">Aalto University</h3>
           <p className="text-sm font-normal text-gray-500">Sep. 2019 - Currently</p>
           <ul className="educationlist list-inside list-disc">
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Master&apos;s student</li>
@@ -19,7 +19,7 @@ const Resume = () => {
               Bachelor&apos;s degree in electronics and electrical engineering
             </li>
           </ul>
-          <h3 className="mt-6 text-xl text-[#f87676]">University of Helsinki</h3>
+          <h3 className="mt-6 text-xl text-[#f7ad58]">University of Helsinki</h3>
           <p className="text-sm font-normal text-gray-500">Sep. 2021 - Currently</p>
           <ul className="educationlist list-inside list-disc">
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Second-year student</li>
@@ -28,7 +28,7 @@ const Resume = () => {
             </li>
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Minor in astronomy</li>
           </ul>
-          <h3 className="mt-6 text-xl text-[#f87676]">Helsinki school of natural sciences (high school)</h3>
+          <h3 className="mt-6 text-xl text-[#f7ad58]">Helsinki school of natural sciences (high school)</h3>
           <p className="text-sm font-normal text-gray-500">Sep. 2015 - Jun. 2018</p>
           <ul className="educationlist list-inside list-disc">
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Graduated in 2018</li>
@@ -36,7 +36,7 @@ const Resume = () => {
           <h3 className="resumehead border-1 mt-4 w-full border-b border-[#eff876] text-[1.3rem] font-normal text-[#eff876]">
             Experience
           </h3>
-          <h3 className="mt-2 text-xl text-[#f87676]">Vaisala Oyj</h3>
+          <h3 className="mt-2 text-xl text-[#f7ad58]">Vaisala Oyj</h3>
           <p className="text-sm font-normal text-gray-500">May 2022 - Aug. 2022 & May 2023 - Aug. 2023</p>
           <ul className="educationlist list-inside list-disc">
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
