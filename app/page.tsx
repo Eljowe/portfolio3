@@ -145,7 +145,7 @@ export default function Home() {
           },
           opacity: 0,
           zIndex: 0,
-          x: -200,
+          x: 0 /* Change this to move position when scrolling */,
         }
       )
       .fromTo(
@@ -171,10 +171,11 @@ export default function Home() {
     <main className="page flex min-h-screen flex-col items-center justify-between overflow-hidden text-white">
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled} />
       <NavigationScreen toggleMenu={toggleMenu} />
-      <section id="home" className="flex min-h-screen">
+      <section id="home" className="flex min-h-screen w-screen">
+        <span className="absolute left-[4vw] top-[60px] mx-auto h-[1px] w-[92vw] bg-[#eff876] opacity-100"></span>
         <div
           ref={titleref}
-          className="titlediv fixed right-4 top-1/3 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal text-[#eff876] sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
+          className="titlediv fixed right-4 top-1/4 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal text-[#eff876] sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
         >
           <h1 className="main-title">PORTFOLIO</h1>
           <h1 className="main-title">JOEL WICKSTRÖM</h1>
@@ -186,10 +187,13 @@ export default function Home() {
         >
           <ThreeScene parent="threeSceneDiv" />
         </div>
+        <div className="h-screen w-full bg-black object-fill">
+          <img src="flow.jpg" className="h-full w-full object-cover opacity-60" />
+        </div>
       </section>
       <section
         id="aboutsection"
-        className="z-10 flex min-h-screen w-full items-center justify-center rounded-t-2xl bg-[#1d1d1d] p-6 shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] sm:rounded-none"
+        className="z-10 flex min-h-screen w-full items-center justify-center bg-[#1d1d1d] p-6 shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] sm:rounded-none"
       >
         <About />
       </section>
