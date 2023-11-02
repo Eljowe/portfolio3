@@ -1,5 +1,4 @@
 import { BsX } from 'react-icons/bs';
-import { a } from 'react-scroll';
 
 type NavigationScreenProps = {
   toggleMenu: () => void;

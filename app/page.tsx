@@ -172,7 +172,7 @@ export default function Home() {
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled} />
       <NavigationScreen toggleMenu={toggleMenu} />
       <section id="home" className="flex min-h-screen w-screen">
-        <span className="absolute left-[4vw] top-[60px] mx-auto h-[1px] w-[92vw] bg-[#eff876] opacity-100"></span>
+        <span className="absolute left-[4vw] top-[60px] z-10 mx-auto h-[1px] w-[92vw] bg-[#eff876] opacity-100"></span>
         <div
           ref={titleref}
           className="titlediv fixed right-4 top-1/4 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal text-[#eff876] sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
