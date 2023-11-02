@@ -1,5 +1,5 @@
 import { BsX } from 'react-icons/bs';
-import { Link } from 'react-scroll';
+import { a } from 'react-scroll';
 
 type NavigationScreenProps = {
   toggleMenu: () => void;
@@ -19,48 +19,40 @@ const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
       <nav>
         <ul className="NavList">
           <li>
-            <Link
-              to="home"
-              smooth={true}
-              duration={500}
+            <a
+              href="/#home"
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
               onClick={toggleMenu}
             >
               HOME
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              to="aboutsection"
-              smooth={true}
-              duration={500}
+              href="/#aboutsection"
               onClick={toggleMenu}
             >
               ABOUT
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              to="projects"
-              smooth={true}
-              duration={500}
+              href="/#projects"
               onClick={toggleMenu}
             >
               PROJECTS
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
-              to="resume"
-              smooth={true}
-              duration={500}
+              href="/#resume"
               onClick={toggleMenu}
             >
               RESUME
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
