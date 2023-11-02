@@ -174,7 +174,7 @@ export default function Home() {
       <section id="home" className="flex min-h-screen">
         <div
           ref={titleref}
-          className="titlediv fixed right-4 top-1/3 z-[2] flex max-w-[80vw] flex-col text-left text-[12vw] text-[#eff876] sm:w-screen sm:text-6xl md:text-8xl"
+          className="titlediv fixed right-4 top-1/3 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal text-[#eff876] sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
         >
           <h1 className="main-title">PORTFOLIO</h1>
           <h1 className="main-title">JOEL WICKSTRÖM</h1>

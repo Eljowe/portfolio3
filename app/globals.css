@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'header';
+  src:
+    local('header'),
+    url(../public/header.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+							  'embedded-opentype', and 'svg' */
+}
+
 body {
   position: relative;
   margin: 0;
@@ -14,6 +23,11 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+}
+
+.main-title {
+  font-family: 'header';
+  letter-spacing: 0px;
 }
 
 pre {
@@ -59,6 +73,21 @@ body::after {
 .text-segment img {
   max-height: 300px;
   object-fit: contain;
+}
+
+.text-segment p:first-of-type::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f87676;
+  font-family: 'Playfair Display', serif;
+}
+
+.text-segment blockquote {
+  margin: auto;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  line-height: 1.2em;
+  color: #949494;
 }
 
 /* Navbar */
@@ -159,4 +188,6 @@ body::after {
 .project h4 {
   font-size: xx-large;
   color: #eff876;
+  text-align: start;
+  margin: 4rem 0 1rem 0;
 }

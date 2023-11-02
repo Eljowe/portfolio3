@@ -179,6 +179,7 @@ export default function Project({ params }: Props) {
               types: {
                 image: SampleImageComponent,
                 code: SampleCodeComponent,
+                blockImage: SampleImageComponent,
               },
             }}
           />
