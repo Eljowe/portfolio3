@@ -5,5 +5,15 @@
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "@next/next/no-img-element": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "globals": {
+    "document": true,
+    "foo": true,
+    "window": true
   }
 }
