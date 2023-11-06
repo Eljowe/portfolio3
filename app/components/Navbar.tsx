@@ -32,8 +32,6 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
     resizeHandler();
     window.addEventListener('resize', resizeHandler);
 
-    // Cleanup function
-    // Remove the event listener when the component is unmounted
     return () => {
       window.removeEventListener('resize', resizeHandler);
     };
