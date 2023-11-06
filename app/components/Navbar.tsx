@@ -31,11 +31,22 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
   useEffect(() => {
     resizeHandler();
     window.addEventListener('resize', resizeHandler);
+    window.addEventListener('scroll', scrollFunction);
 
     return () => {
       window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener('scroll', scrollFunction);
     };
   }, []);
+
+  function scrollFunction() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (document.getElementById('myBar') != null) {
+      document.getElementById('myBar')!.style.width = scrolled + '%';
+    }
+  }
 
   return (
     <div className={`${isScrolled ? 'NavbarScrolled' : 'Navbar'} bottom-1`}>
@@ -75,7 +86,9 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
           </ul>
         )}
       </nav>
-      <span className="absolute left-[4vw] top-[60px] z-10 mx-auto h-[1px] w-[92vw] bg-[#eff876] opacity-100"></span>
+      <div className="absolute left-[4vw] top-[60px] z-10 mx-auto block h-[1px] w-[92vw] items-start bg-[#a6ad38] opacity-100">
+        <div className="z-10 block h-[1px] w-0 bg-[#eff876] opacity-100" id="myBar"></div>
+      </div>
     </div>
   );
 };
