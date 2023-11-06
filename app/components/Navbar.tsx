@@ -8,33 +8,41 @@ type BurgerNavbarProps = {
   isScrolled: boolean;
 };
 
+interface Size {
+  width: number;
+  height: number;
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
 const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) => {
-  const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [size, setSize] = useState<Size>({ width: 0, height: 0 });
+
+  const resizeHandler = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    setSize({
+      width: width,
+      height: height,
+    });
+  };
 
   useEffect(() => {
-    const handleResize = () => {
-      setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
+    resizeHandler();
+    window.addEventListener('resize', resizeHandler);
 
-    window.addEventListener('resize', handleResize);
-
+    // Cleanup function
+    // Remove the event listener when the component is unmounted
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', resizeHandler);
     };
   }, []);
 
   return (
     <div className={`${isScrolled ? 'NavbarScrolled' : 'Navbar'} bottom-1`}>
       <nav className={`z-1 absolute flex h-[60px] w-screen px-[4vw]`}>
-        {screenSize.width < 500 ? (
+        {size!.width < 500 ? (
           <button
             className="crossIconButton fixed top-0 z-10 transition duration-500 hover:scale-110"
             onClick={toggleMenu}
