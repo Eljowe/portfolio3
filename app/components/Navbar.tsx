@@ -39,7 +39,7 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
 
   return (
     <div className={`${isScrolled ? 'NavbarScrolled' : 'Navbar'} bottom-1`}>
-      <nav className={`z-1 absolute flex h-[60px] w-screen px-[4vw]`}>
+      <nav className={`z-1 absolute flex h-[60px] w-screen flex-col px-[4vw]`}>
         {size!.width < 500 ? (
           <button
             className="crossIconButton fixed top-0 z-10 transition duration-500 hover:scale-110"
@@ -75,6 +75,7 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
           </ul>
         )}
       </nav>
+      <span className="absolute left-[4vw] top-[60px] z-10 mx-auto h-[1px] w-[92vw] bg-[#eff876] opacity-100"></span>
     </div>
   );
 };

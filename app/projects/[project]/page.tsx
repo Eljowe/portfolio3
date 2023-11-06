@@ -12,7 +12,7 @@ import NavigationScreen from '../../components/NavigationScreen';
 import BurgerNavbar from '../../components/Navbar';
 import { gsap } from 'gsap';
 import { FC } from 'react';
-import { BsArrowLeft } from 'react-icons/bs';
+import { BsArrowLeft, BsGithub, BsLink45Deg } from 'react-icons/bs';
 
 type Props = {
   params: {
@@ -128,7 +128,7 @@ export default function Project({ params }: Props) {
       <NavigationScreen toggleMenu={toggleMenu} />
       <div className="mx-auto mt-10 flex w-screen max-w-[800px] flex-col items-center px-6">
         <div className="flex w-full flex-row items-start">
-          <h1 className="my-4 text-left text-3xl font-bold text-[#eff876] sm:mt-10 lg:mt-24 lg:text-5xl lg:leading-tight">
+          <h1 className="mb-4 mt-24 text-left text-3xl font-bold text-[#eff876] lg:text-5xl lg:leading-tight">
             {project.name}
           </h1>
         </div>
@@ -142,7 +142,7 @@ export default function Project({ params }: Props) {
         <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
           <a
             href="/#projects"
-            className="flex flex-row items-center  p-1 text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+            className="flex flex-row items-center p-1 text-[#f87676] transition duration-500 hover:scale-110 hover:underline"
           >
             <BsArrowLeft className="mr-2" />
             Back
@@ -152,24 +152,28 @@ export default function Project({ params }: Props) {
               href={project.githubUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className=" p-1 text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+              className="flex flex-row items-center p-1 text-[#f87676] transition duration-500 hover:scale-110 hover:underline"
             >
-              Github repository
+              Github repository <BsGithub className="ml-2" />
             </a>
           ) : (
-            <span className="p-1 text-zinc-500">Github repository</span>
+            <span className="flex flex-row items-center p-1 text-zinc-500">
+              Github repository <BsGithub className="ml-2" />
+            </span>
           )}
           {project.projectUrl ? (
             <a
               href={project.projectUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className=" p-1 text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+              className="flex flex-row items-center p-1 text-[#f87676] transition duration-500 hover:scale-110 hover:underline"
             >
-              Project website
+              Website <BsLink45Deg className="ml-2" />
             </a>
           ) : (
-            <span className=" p-1 text-zinc-500">Project website</span>
+            <span className=" flex flex-row items-center p-1 text-zinc-500">
+              Website <BsLink45Deg className="ml-2" />
+            </span>
           )}
         </div>
         <div className="text-segment mx-auto mt-8 flex w-[100%] max-w-[800px] flex-col gap-y-6 text-justify leading-7">
