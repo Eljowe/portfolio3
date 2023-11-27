@@ -137,7 +137,7 @@ export default function Project({ params }: Props) {
           <Image
             src={project.coverImage?.image}
             alt={project.coverImage?.alt || project.name}
-            layout="fill"
+            fill
             objectFit="cover"
             className="h-max rounded-md shadow-md"
           />

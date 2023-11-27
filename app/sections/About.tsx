@@ -20,8 +20,6 @@ const About = () => {
           <Image
             src="/profile2.jpg"
             alt="portrait picture of me"
-            layout="responsive"
-            objectFit="contain"
             width={800}
             height={600}
             className="rounded-[0.5rem]"
