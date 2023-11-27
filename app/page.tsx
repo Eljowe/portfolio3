@@ -9,6 +9,7 @@ import Projects from './sections/Projects';
 import Resume from './sections/Resume';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import ThreeScene from './components/ThreeScene';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -182,12 +183,12 @@ export default function Home() {
         <div
           ref={pointref}
           id="threeSceneDiv"
-          className="pointer-events-none fixed left-0 z-0 h-[120vh] w-[120vw] sm:left-[-200px]"
+          className="pointer-events-none fixed left-0 z-10 h-[120vh] w-[120vw] sm:left-[-200px]"
         >
           <ThreeScene parent="threeSceneDiv" />
         </div>
-        <div className="h-screen w-full bg-black object-fill">
-          <img src="flow.jpg" className="h-full w-full object-cover opacity-60" />
+        <div className="relative z-0 h-screen w-full bg-black object-fill">
+          <Image src="/flow.jpg" fill className="h-screen w-screen object-cover opacity-60" alt="background image" />
         </div>
       </section>
       <section
