@@ -1,6 +1,7 @@
 import { getProjects } from '@/sanity/lib/query';
 import type { ProjectType } from '@/types';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Project() {
   const [projects, setProjects] = useState<ProjectType[]>();
@@ -24,13 +25,15 @@ export default function Project() {
                 key={project._id}
                 className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-[#1d1d20] p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-[#eff876] hover:!opacity-100 group-hover:opacity-50"
               >
-                <img
-                  src={project.logo}
-                  width={100}
-                  height={100}
-                  alt={project.name}
-                  className="h-[60px] max-w-[60px] rounded-md bg-zinc-800 object-fill shadow-md"
-                />
+                <div className="relative h-[60px] w-[60px] rounded-md bg-zinc-800">
+                  <Image
+                    src={project.logo}
+                    alt={project.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-md shadow-md"
+                  />
+                </div>
                 <div>
                   <h2 className="mb-1 font-semibold">{project.name}</h2>
                   <div className="text-sm text-zinc-400">{project.tagline}</div>

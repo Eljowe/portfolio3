@@ -13,6 +13,7 @@ import BurgerNavbar from '../../components/Navbar';
 import { gsap } from 'gsap';
 import { FC } from 'react';
 import { BsArrowLeft, BsGithub, BsLink45Deg } from 'react-icons/bs';
+import Image from 'next/image';
 
 type Props = {
   params: {
@@ -132,13 +133,17 @@ export default function Project({ params }: Props) {
             {project.name}
           </h1>
         </div>
-        <img
-          className="max-h-[400px] rounded-xl border border-zinc-800 object-cover"
-          width={900}
-          height={460}
-          src={project.coverImage?.image}
-          alt={project.coverImage?.alt || project.name}
-        />
+        <div className="relative h-full max-h-[400px] w-full rounded-xl border border-zinc-800 object-cover">
+          <Image
+            src={project.coverImage?.image}
+            alt={project.coverImage?.alt || project.name}
+            layout="responsive"
+            objectFit="contain"
+            width={800}
+            height={600}
+            className="rounded-md shadow-md"
+          />
+        </div>
         <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
           <a
             href="/#projects"
