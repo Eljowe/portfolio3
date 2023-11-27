@@ -133,15 +133,13 @@ export default function Project({ params }: Props) {
             {project.name}
           </h1>
         </div>
-        <div className="relative h-full max-h-[400px] w-full rounded-xl border border-zinc-800 object-cover">
+        <div className="relative h-[30dvh] max-h-[400px] w-full rounded-xl border border-zinc-800 object-cover">
           <Image
             src={project.coverImage?.image}
             alt={project.coverImage?.alt || project.name}
-            layout="responsive"
-            objectFit="contain"
-            width={800}
-            height={600}
-            className="rounded-md shadow-md"
+            layout="fill"
+            objectFit="cover"
+            className="h-max rounded-md shadow-md"
           />
         </div>
         <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
