@@ -86,7 +86,7 @@ body::after {
 .text-segment p:first-of-type::first-letter {
   font-size: 2rem;
   font-weight: bold;
-  color: #f87676;
+  color: #eff876;
   font-family: 'Playfair Display', serif;
 }
 
