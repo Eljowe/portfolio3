@@ -75,7 +75,7 @@ body::after {
 }
 
 .text-segment a:hover {
-  color: rgb(255, 208, 0);
+  color: #ffd000;
 }
 
 .text-segment img {

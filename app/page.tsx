@@ -188,7 +188,13 @@ export default function Home() {
           <ThreeScene parent="threeSceneDiv" />
         </div>
         <div className="relative z-0 h-screen w-full bg-black object-fill">
-          <Image src="/flow.jpg" fill className="h-screen w-screen object-cover opacity-60" alt="background image" />
+          <Image
+            src="/flow.jpg"
+            fill
+            className="h-screen w-screen object-cover opacity-60"
+            alt="background image"
+            priority
+          />
         </div>
       </section>
       <section
