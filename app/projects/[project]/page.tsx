@@ -145,7 +145,7 @@ export default function Project({ params }: Props) {
         <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
           <a
             href="/#projects"
-            className="flex flex-row items-center p-1 text-[#76bef8] transition duration-500 hover:scale-110 hover:underline"
+            className="flex flex-row items-center p-1 text-[#ffa7a7] transition duration-500 hover:scale-110 hover:underline"
           >
             <BsArrowLeft className="mr-2" />
             Back
@@ -155,7 +155,7 @@ export default function Project({ params }: Props) {
               href={project.githubUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="flex flex-row items-center p-1 text-[#76bef8] transition duration-500 hover:scale-110 hover:underline"
+              className="flex flex-row items-center p-1 text-[#ffa7a7] transition duration-500 hover:scale-110 hover:underline"
             >
               Github repository <BsGithub className="ml-2" />
             </a>
@@ -169,7 +169,7 @@ export default function Project({ params }: Props) {
               href={project.projectUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="flex flex-row items-center p-1 text-[#76bef8] transition duration-500 hover:scale-110 hover:underline"
+              className="flex flex-row items-center p-1 text-[#ffa7a7] transition duration-500 hover:scale-110 hover:underline"
             >
               Website <BsLink45Deg className="ml-2" />
             </a>
