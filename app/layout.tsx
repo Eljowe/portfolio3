@@ -20,6 +20,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`debug-screens1`}>{children}</body>
+      <script
+        async
+        src="https://umami-one-theta.vercel.app/script.js"
+        data-website-id="ee411234-cc2b-4cd0-b179-cfe3339d35bf"
+      ></script>
     </html>
   );
 }
