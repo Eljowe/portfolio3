@@ -14,7 +14,7 @@ export default function Project() {
     <div className="max-w-[1200px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
         <h1 className="mb-4 text-left text-2xl font-normal text-[#eff876]">Projects</h1>
-        <p className="mb-4 text-white">Random stuff I&apos;ve built and tinkered with over the years.</p>
+        <p className="mb-4 text-white">Some stuff I&apos;ve spent my time with in the past.</p>
       </div>
 
       <div className="group mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -40,7 +40,7 @@ export default function Project() {
                 </div>
               </a>
             ))
-          : null}
+          : 'Loading...'}
       </div>
     </div>
   );
