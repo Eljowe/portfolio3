@@ -35,7 +35,7 @@ export default function Project() {
                   />
                 </div>
                 <div>
-                  <h2 className="mb-1 font-semibold">{project.name}</h2>
+                  <h2 className="mb-1">{project.name}</h2>
                   <div className="text-sm text-zinc-400">{project.tagline}</div>
                 </div>
               </a>

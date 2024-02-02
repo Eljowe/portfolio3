@@ -216,10 +216,18 @@ export default function Home() {
         <Resume />
       </section>
       <footer className="justify-left z-10 flex h-[90px] w-full flex-row items-center bg-[#181818] text-white">
-        <a href="https://www.linkedin.com/in/joelwickstrom/" target="_blank" className="m-4 ml-10">
+        <a
+          href="https://www.linkedin.com/in/joelwickstrom/"
+          target="_blank"
+          className="m-4 ml-10 transition duration-500 hover:scale-110 hover:text-[#eff876]"
+        >
           <BsLinkedin className="h-8 w-8" />
         </a>
-        <a href="https://github.com/Eljowe" target="_blank" className="m-4">
+        <a
+          href="https://github.com/Eljowe"
+          target="_blank"
+          className="m-4 transition duration-500 hover:scale-110 hover:text-[#eff876]"
+        >
           <BsGithub className="h-8 w-8" />
         </a>
       </footer>
