@@ -12,6 +12,8 @@ import NavigationScreen from '../../components/NavigationScreen';
 import BurgerNavbar from '../../components/Navbar';
 import { gsap } from 'gsap';
 import { FC } from 'react';
+import { BsArrowLeft, BsGithub, BsLink45Deg } from 'react-icons/bs';
+import Image from 'next/image';
 
 type Props = {
   params: {
@@ -122,58 +124,69 @@ export default function Project({ params }: Props) {
   };
 
   return (
-    <main className="project w-screen min-h-screen text-white mx-auto lg:px-16 px-8 bg-[#1d1d1d] pb-10 overflow-x-hidden">
+    <main className="project mx-auto min-h-screen w-screen overflow-x-hidden bg-[#1d1d1d] pb-10 text-white">
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled} />
       <NavigationScreen toggleMenu={toggleMenu} />
-      <div className="max-w-[800px] mx-auto flex flex-col items-center mt-10">
-        <div className="flex flex-row items-start w-full">
-          <h1 className="font-bold text-[#eff876] lg:text-5xl text-3xl lg:leading-tight my-4 text-left">
+      <div className="mx-auto mt-10 flex w-screen max-w-[800px] flex-col items-center px-6">
+        <div className="flex w-full flex-row items-start">
+          <h1 className="mb-4 mt-24 text-left text-3xl font-bold text-[#eff876] lg:text-5xl lg:leading-tight">
             {project.name}
           </h1>
         </div>
-        <img
-          className="rounded-xl border border-zinc-800 object-cover max-h-[400px]"
-          width={900}
-          height={460}
-          src={project.coverImage?.image}
-          alt={project.coverImage?.alt || project.name}
-        />
-        <div className="flex flex-row justify-evenly w-full mt-8">
-          <a href="/#projects" className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]">
-            Go Back
+        <div className="relative h-[30dvh] max-h-[400px] w-full rounded-xl border border-zinc-800 object-cover">
+          <Image
+            src={project.coverImage?.image}
+            alt={project.coverImage?.alt || project.name}
+            fill
+            objectFit="cover"
+            className="h-max rounded-md shadow-md"
+          />
+        </div>
+        <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
+          <a
+            href="/#projects"
+            className="flex flex-row items-center p-1 text-[#ffa7a7] transition duration-500 hover:scale-110 hover:underline"
+          >
+            <BsArrowLeft className="mr-2" />
+            Back
           </a>
           {project.githubUrl ? (
             <a
               href={project.githubUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
+              className="flex flex-row items-center p-1 text-[#ffa7a7] transition duration-500 hover:scale-110 hover:underline"
             >
-              Github repository
+              Github repository <BsGithub className="ml-2" />
             </a>
           ) : (
-            <span className="border-b border-zinc-500 text-zinc-500 p-1">Github repository</span>
+            <span className="flex flex-row items-center p-1 text-zinc-500">
+              Github repository <BsGithub className="ml-2" />
+            </span>
           )}
           {project.projectUrl ? (
             <a
               href={project.projectUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="text-white border-b border-[#eff876] p-1 hover:text-[#eff876]"
+              className="flex flex-row items-center p-1 text-[#ffa7a7] transition duration-500 hover:scale-110 hover:underline"
             >
-              Project website
+              Website <BsLink45Deg className="ml-2" />
             </a>
           ) : (
-            <span className="border-b border-zinc-500 text-zinc-500 p-1">Project website</span>
+            <span className=" flex flex-row items-center p-1 text-zinc-500">
+              Website <BsLink45Deg className="ml-2" />
+            </span>
           )}
         </div>
-        <div className="text-segment flex flex-col max-w-[800px] w-[100%] mx-auto gap-y-6 mt-8 leading-7 text-justify">
+        <div className="text-segment mx-auto mt-8 flex w-[100%] max-w-[800px] flex-col gap-y-6 text-justify leading-7">
           <PortableText
             value={project.description}
             components={{
               types: {
                 image: SampleImageComponent,
                 code: SampleCodeComponent,
+                blockImage: SampleImageComponent,
               },
             }}
           />

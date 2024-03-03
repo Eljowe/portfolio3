@@ -1,10 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 
 const About = () => {
   return (
-    <div id="about" className="text-justify pt-10 sm:pt-0 max-w-[800px] sm:text-xl font-extralight">
+    <div id="about" className="max-w-[800px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
-        <h1 className="title text-2xl font-normal mb-4 text-[#eff876]">Foreword</h1>
+        <h1 className="title mb-4 text-2xl font-normal text-[#eff876]">Foreword</h1>
         <div className="Foreword">
           <p>
             I am a 23-year-old Masters student currently specializing in Human-Computer Interaction at Aalto University.
@@ -15,12 +16,16 @@ const About = () => {
         </div>
       </div>
       <div className="Aboutmediv mb-6 mt-6">
-        <img
-          src="/profile2.jpg"
-          alt="me"
-          className="profilepic w-full rounded-[0.5rem] sm:w-[250px] sm:max-h-[300px] my-4 sm:float-right sm:m-[3vh_2vh_2vh_4vh]"
-        />
-        <h3 className="text-2xl font-normal mb-4 mt-6 text-[#eff876]">About this website</h3>
+        <div className="relative my-4 h-full w-full sm:float-right sm:m-[3vh_2vh_2vh_4vh] sm:max-h-[300px] sm:w-[250px]">
+          <Image
+            src="/profile2.jpg"
+            alt="portrait picture of me"
+            width={800}
+            height={600}
+            className="rounded-[0.5rem]"
+          />
+        </div>
+        <h3 className="mb-4 mt-6 text-2xl font-normal text-[#eff876]">About this website</h3>
         <p className="Aboutme">
           I try to update this website from time to time, as I gather new experience through work and personal projects.
           This website serves as a portfolio, CV, and a playground for my front-end experiments.

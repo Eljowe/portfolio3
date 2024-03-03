@@ -1,12 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Red_Hat_Display } from 'next/font/google';
-
-const red_hat = Red_Hat_Display({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Joel's website",
-  description: 'Generated with create next app',
+  title: "Joel Wickström's portfolio",
+  description: 'My portfolio website',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -14,10 +11,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="theme-color" content="#1d1d1d"></meta>
-        <link rel="icon" type="image/png" href="sphere.PNG" />
-        <link rel="shortcut icon" href="sphere.PNG" type="image/png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Red+Hat+Display:wght@300&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={`debug-screens1 ${red_hat.className}`}>{children}</body>
+      <body className={`debug-screens1`}>{children}</body>
+      <script
+        async
+        src="https://umami-one-theta.vercel.app/script.js"
+        data-website-id="ee411234-cc2b-4cd0-b179-cfe3339d35bf"
+      ></script>
     </html>
   );
 }

@@ -9,6 +9,7 @@ import Projects from './sections/Projects';
 import Resume from './sections/Resume';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import ThreeScene from './components/ThreeScene';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -145,7 +146,7 @@ export default function Home() {
           },
           opacity: 0,
           zIndex: 0,
-          x: -200,
+          x: 0 /* Change this to move position when scrolling */,
         }
       )
       .fromTo(
@@ -168,45 +169,66 @@ export default function Home() {
   });
 
   return (
-    <main className="page flex min-h-screen flex-col items-center justify-between text-white overflow-hidden">
+    <main className="page flex min-h-screen flex-col items-center justify-between overflow-hidden text-white">
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled} />
       <NavigationScreen toggleMenu={toggleMenu} />
-      <section id="home" className="min-h-screen flex">
+      <section id="home" className="flex min-h-screen w-screen">
         <div
           ref={titleref}
-          className="titlediv flex flex-col fixed top-1/3 text-[12vw] sm:text-6xl md:text-8xl right-4 max-w-[80vw] sm:w-screen text-left text-[#eff876] z-[2]"
+          className="titlediv fixed right-4 top-1/4 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal text-[#eff876] sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
         >
           <h1 className="main-title">PORTFOLIO</h1>
           <h1 className="main-title">JOEL WICKSTRÖM</h1>
         </div>
-        <div ref={pointref} id="threeSceneDiv" className="w-[120vw] h-[120vh] fixed left-0 sm:left-[-200px] z-0">
+        <div
+          ref={pointref}
+          id="threeSceneDiv"
+          className="pointer-events-none fixed left-0 z-10 h-[120vh] w-[120vw] sm:left-[-200px]"
+        >
           <ThreeScene parent="threeSceneDiv" />
+        </div>
+        <div className="relative z-0 h-screen w-full bg-black object-fill">
+          <Image
+            src="/flow.jpg"
+            fill
+            className="h-screen w-screen object-cover opacity-60"
+            alt="background image"
+            priority
+          />
         </div>
       </section>
       <section
         id="aboutsection"
-        className="min-h-screen w-full p-6 flex items-center justify-center bg-[#1d1d1d] rounded-t-2xl sm:rounded-none shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] z-10"
+        className="z-10 flex min-h-screen w-full items-center justify-center bg-[#1d1d1d] p-6 shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] sm:rounded-none"
       >
         <About />
       </section>
       <section
         id="projects"
-        className="min-h-screen flex p-6 bg-gradient-to-b bg-[#181818] w-full items-center justify-center text-[#eff876] z-10"
+        className="z-10 flex min-h-screen w-full items-center justify-center bg-[#181818] bg-gradient-to-b p-6 text-[#eff876]"
       >
         <Projects />
       </section>
       <section
         id="resume"
-        className="min-h-screen flex p-6 bg-[#1d1d1d] w-full items-center justify-center z-10 text-white"
+        className="z-10 flex min-h-screen w-full items-center justify-center bg-[#1d1d1d] p-6 text-white"
       >
         <Resume />
       </section>
-      <footer className="flex flex-row items-center justify-center w-full h-[90px] bg-[#181818] z-10 text-white">
-        <a href="https://www.linkedin.com/in/joelwickstrom/" target="_blank" className="m-4">
-          <BsLinkedin className="w-8 h-8" />
+      <footer className="justify-left z-10 flex h-[90px] w-full flex-row items-center bg-[#181818] text-white">
+        <a
+          href="https://www.linkedin.com/in/joelwickstrom/"
+          target="_blank"
+          className="m-4 ml-10 transition duration-500 hover:scale-110 hover:text-[#eff876]"
+        >
+          <BsLinkedin className="h-8 w-8" />
         </a>
-        <a href="https://github.com/Eljowe" target="_blank" className="m-4">
-          <BsGithub className="w-8 h-8" />
+        <a
+          href="https://github.com/Eljowe"
+          target="_blank"
+          className="m-4 transition duration-500 hover:scale-110 hover:text-[#eff876]"
+        >
+          <BsGithub className="h-8 w-8" />
         </a>
       </footer>
     </main>

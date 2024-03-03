@@ -7,29 +7,50 @@ type NavigationScreenProps = {
 const NavigationScreen: React.FC<NavigationScreenProps> = ({ toggleMenu }) => {
   return (
     <div className="NavigationScreen z-20">
-      <a className="NavigationScreenCross" onClick={toggleMenu}>
-        <BsX className="BsX" size="4rem" />
-      </a>
+      <div className="px-auto absolute h-[60px] w-[92vw] py-[1dvh]">
+        <button
+          className="NavigationScreenCross transition duration-500 hover:scale-110 hover:text-[#eff876]"
+          onClick={toggleMenu}
+        >
+          <BsX className="BsX" size="4rem" />
+        </button>
+      </div>
       <nav>
         <ul className="NavList">
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#home" onClick={toggleMenu}>
-              Home
+            <a
+              href="/#home"
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+              onClick={toggleMenu}
+            >
+              HOME
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#about" onClick={toggleMenu}>
-              About
+            <a
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+              href="/#aboutsection"
+              onClick={toggleMenu}
+            >
+              ABOUT
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#projects" onClick={toggleMenu}>
-              Projects
+            <a
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+              href="/#projects"
+              onClick={toggleMenu}
+            >
+              PROJECTS
             </a>
           </li>
           <li>
-            <a className="NavigationScreenItem hover:text-[#eff876]" href="/#resume" onClick={toggleMenu}>
-              Resume
+            <a
+              className="NavigationScreenItem font-extrabold text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+              href="/#resume"
+              onClick={toggleMenu}
+            >
+              RESUME
             </a>
           </li>
         </ul>

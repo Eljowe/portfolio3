@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'header';
+  src:
+    local('header'),
+    url(../public/header.otf) format('opentype');
+  /*url(../public/header.otf) format('opentype');*/
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+							  'embedded-opentype', and 'svg' */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   margin: 0;
@@ -14,6 +28,12 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.main-title {
+  font-family: 'header';
+  letter-spacing: 0px;
 }
 
 pre {
@@ -21,6 +41,8 @@ pre {
   border-radius: 0.5rem;
   max-width: 100%;
 }
+
+/* The progress bar (scroll indicator) */
 
 body::after {
   position: fixed;
@@ -49,16 +71,31 @@ body::after {
 }
 
 .text-segment a {
-  color: rgb(251, 255, 0);
+  color: #76bef8;
 }
 
 .text-segment a:hover {
-  color: rgb(255, 208, 0);
+  color: #ffd000;
 }
 
 .text-segment img {
   max-height: 300px;
   object-fit: contain;
+}
+
+.text-segment p:first-of-type::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #eff876;
+  font-family: 'Playfair Display', serif;
+}
+
+.text-segment blockquote {
+  margin: auto;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  line-height: 1.2em;
+  color: #949494;
 }
 
 /* Navbar */
@@ -69,28 +106,25 @@ body::after {
 
 .Navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
+  height: 60px;
   position: fixed;
+  padding: 1dvh auto;
   top: 0;
-  left: 0;
   background-color: none;
   z-index: 20;
 }
 
 .NavbarScrolled {
-  position: fixed;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  left: 0;
   position: fixed;
-  box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.88);
-  background-color: #1d1d1d;
-  z-index: 20;
+  padding: 1dvh auto;
+  width: 100%;
   height: 60px;
+  top: 0;
+  backdrop-filter: blur(4px);
+  z-index: 20;
+  /*box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.88);*/
 }
 
 .NavbarScrolled * {
@@ -107,7 +141,7 @@ body::after {
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  background-color: #181818;
+  background-color: #723d00;
 }
 
 .NavigationScreenItem {
@@ -117,8 +151,8 @@ body::after {
   font-size: 2rem;
   text-align: left;
   align-items: left;
-  color: white;
   margin: 2vh 0;
+  cursor: pointer;
 }
 
 .NavigationScreen nav {
@@ -134,7 +168,7 @@ body::after {
 }
 
 .NavigationScreenCross {
-  color: white;
+  color: #eff876;
   display: flex;
   align-items: flex-start;
   position: absolute;
@@ -142,13 +176,13 @@ body::after {
 }
 
 .BsX {
-  margin-left: -8px;
+  margin-left: -20px;
   margin-top: -5px;
   cursor: pointer;
 }
 
 .crossIconButton {
-  margin: 0.5vh;
+  margin: 0.5vh 0;
   cursor: pointer;
   position: absolute;
 }
@@ -160,4 +194,6 @@ body::after {
 .project h4 {
   font-size: xx-large;
   color: #eff876;
+  text-align: start;
+  margin: 4rem 0 1rem 0;
 }

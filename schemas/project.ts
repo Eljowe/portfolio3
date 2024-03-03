@@ -80,6 +80,31 @@ const project = {
           type: 'image',
         },
         {
+          type: 'image',
+          title: 'Image',
+          name: 'blockImage',
+          fields: [
+            {
+              type: 'image',
+              name: 'inlineImage',
+            },
+            {
+              type: 'string',
+              layout: 'list',
+              name: 'alignment',
+              options: {
+                list: [
+                  { title: 'Left', value: 'left' },
+                  { title: 'Center', value: 'center' },
+                  { title: 'Right', value: 'right' },
+                ],
+                layout: 'radio',
+                direction: 'horizontal',
+              },
+            },
+          ],
+        },
+        {
           type: 'code',
           options: {
             language: 'javascript',
@@ -95,23 +120,6 @@ const project = {
           },
         },
       ],
-    },
-    {
-      type: 'code',
-      name: 'myCodeField1',
-      title: 'Code with all options',
-      options: {
-        language: 'javascript',
-        languageAlternatives: [
-          { title: 'Javascript', value: 'javascript' },
-          { title: 'HTML', value: 'html' },
-          { title: 'CSS', value: 'css' },
-          { title: 'Typescript', value: 'typescript' },
-          { title: 'Python', value: 'python' },
-          { title: 'Dart', value: 'dart' },
-        ],
-        withFilename: true,
-      },
     },
   ],
 };

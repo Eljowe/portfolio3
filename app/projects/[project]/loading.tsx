@@ -1,14 +1,14 @@
 export default function Loading() {
   return (
-    <div className="max-w-3xl mx-auto lg:px-0 px-8">
-      <div className="flex items-center justify-between mb-6">
-        <span className="w-52 h-11 bg-[#1d1d20] rounded-sm animate-pulse"></span>
-        <span className="w-20 h-11 bg-[#1d1d20] rounded-sm animate-pulse"></span>
+    <div className="mx-auto max-w-3xl px-8 lg:px-0">
+      <div className="mb-6 flex items-center justify-between">
+        <span className="h-11 w-52 animate-pulse rounded-sm bg-[#1d1d20]"></span>
+        <span className="h-11 w-20 animate-pulse rounded-sm bg-[#1d1d20]"></span>
       </div>
-      <div className="w-full h-96 mb-8 bg-[#1d1d20] rounded-sm animate-pulse"></div>
+      <div className="mb-8 h-96 w-full animate-pulse rounded-sm bg-[#1d1d20]"></div>
       <div className="flex flex-col gap-y-2">
-        <span className="w-full h-5 bg-[#1d1d20] rounded-sm animate-pulse"></span>
-        <span className="w-full h-5 bg-[#1d1d20] rounded-sm animate-pulse"></span>
+        <span className="h-5 w-full animate-pulse rounded-sm bg-[#1d1d20]"></span>
+        <span className="h-5 w-full animate-pulse rounded-sm bg-[#1d1d20]"></span>
       </div>
     </div>
   );
