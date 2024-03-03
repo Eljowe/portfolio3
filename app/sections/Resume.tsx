@@ -22,7 +22,7 @@ const Resume = () => {
           <h3 className="mt-6 text-xl italic text-[#ffa7a7]">University of Helsinki</h3>
           <p className="text-sm font-normal text-gray-500">Sep. 2021 - Currently</p>
           <ul className="educationlist list-inside list-disc">
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Second-year student</li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Studies on pause</li>
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
               Major in mathematics with computer science as the field of study
             </li>
@@ -64,7 +64,6 @@ const Resume = () => {
             <li className="skill text-[1rem] sm:text-[1.2rem]">
               Programming languages such as javascript, python, and dart
             </li>
-            <li className="skill text-[1rem] sm:text-[1.2rem]">Git</li>
             <li className="skill text-[1rem] sm:text-[1.2rem]">Solidworks CAD</li>
             <li className="skill text-[1rem] sm:text-[1.2rem]">Background in electrical engineering</li>
           </ul>
