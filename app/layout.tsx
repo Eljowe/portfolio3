@@ -22,8 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`debug-screens1`}>{children}</body>
       <script
         async
-        src="https://umami-one-theta.vercel.app/script.js"
-        data-website-id="ee411234-cc2b-4cd0-b179-cfe3339d35bf"
+        defer
+        data-website-id="df92c623-5850-41bc-b8ba-0b5bdab75b5a"
+        src="https://umami-toml.fly.dev/umami.js"
       ></script>
     </html>
   );
