@@ -1,5 +1,5 @@
 import React from 'react';
-
+// #eff876
 const Resume = () => {
   return (
     <div id="resume" className="max-w-[1000px] pb-20 pt-10 text-left font-extralight sm:text-xl">
@@ -7,36 +7,15 @@ const Resume = () => {
       <div className="flex flex-col sm:flex-row">
         <div className="sm:mr-10" id="mainresume">
           <h3 className="resumehead border-1 mt-4 w-full border-b border-[#eff876] text-[1.3rem] font-normal text-[#eff876]">
-            Education
-          </h3>
-          <h3 className="mt-2 text-xl italic text-[#ffa7a7]">Aalto University</h3>
-          <p className="text-sm font-normal text-gray-500">Sep. 2019 - Currently</p>
-          <ul className="educationlist list-inside list-disc">
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Master&apos;s student</li>
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Major in human-computer interaction</li>
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Minor in computer science</li>
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
-              Bachelor&apos;s degree in electronics and electrical engineering
-            </li>
-          </ul>
-          <h3 className="mt-6 text-xl italic text-[#ffa7a7]">University of Helsinki</h3>
-          <p className="text-sm font-normal text-gray-500">Sep. 2021 - Currently</p>
-          <ul className="educationlist list-inside list-disc">
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Studies on pause</li>
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
-              Major in mathematics with computer science as the field of study
-            </li>
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Minor in astronomy</li>
-          </ul>
-          <h3 className="mt-6 text-xl italic text-[#ffa7a7]">Helsinki school of natural sciences (high school)</h3>
-          <p className="text-sm font-normal text-gray-500">Sep. 2015 - Jun. 2018</p>
-          <ul className="educationlist list-inside list-disc">
-            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Graduated in 2018</li>
-          </ul>
-          <h3 className="resumehead border-1 mt-4 w-full border-b border-[#eff876] text-[1.3rem] font-normal text-[#eff876]">
             Experience
           </h3>
-          <h3 className="mt-2 text-xl italic text-[#ffa7a7]">Vaisala Oyj</h3>
+          <h3 className="mt-2 text-xl italic text-[#a7e6e0]">Accenture</h3>
+          <p className="text-sm font-normal text-gray-500">April 2024 - present</p>
+          <ul className="educationlist list-inside list-disc">
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Test automation</li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Tech consulting</li>
+          </ul>
+          <h3 className="mt-2 text-xl italic text-[#a7e6e0]">Vaisala Oyj</h3>
           <p className="text-sm font-normal text-gray-500">May 2022 - Aug. 2022 & May 2023 - Aug. 2023</p>
           <ul className="educationlist list-inside list-disc">
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
@@ -51,6 +30,33 @@ const Resume = () => {
             <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
               Running calibration tests for instruments
             </li>
+          </ul>
+          <h3 className="resumehead border-1 mt-4 w-full border-b border-[#eff876] text-[1.3rem] font-normal text-[#eff876]">
+            Education
+          </h3>
+          <h3 className="mt-2 text-xl italic text-[#a7e6e0]">Aalto University</h3>
+          <p className="text-sm font-normal text-gray-500">Sep. 2019 - Currently</p>
+          <ul className="educationlist list-inside list-disc">
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Master&apos;s student</li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Major in human-computer interaction</li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Minor in computer science</li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
+              Bachelor&apos;s degree in electronics and electrical engineering
+            </li>
+          </ul>
+          <h3 className="mt-6 text-xl italic text-[#a7e6e0]">University of Helsinki</h3>
+          <p className="text-sm font-normal text-gray-500">Sep. 2021 - Currently</p>
+          <ul className="educationlist list-inside list-disc">
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Studies on pause</li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">
+              Major in mathematics with computer science as the field of study
+            </li>
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Minor in astronomy</li>
+          </ul>
+          <h3 className="mt-6 text-xl italic text-[#a7e6e0]">Helsinki school of natural sciences (high school)</h3>
+          <p className="text-sm font-normal text-gray-500">Sep. 2015 - Jun. 2018</p>
+          <ul className="educationlist list-inside list-disc">
+            <li className="ml-2 pr-2 text-left text-[1rem] sm:text-[1.2rem]">Graduated in 2018</li>
           </ul>
         </div>
         <div className="resumediv" id="secondresume text-[1rem] sm:text-[1.2rem]">
