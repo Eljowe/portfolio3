@@ -141,11 +141,10 @@ export default function Home() {
             start: '+=50',
             end: '+=105%',
             scrub: true,
-            invalidateOnRefresh: true,
+            invalidateOnRefresh: false,
             //markers: true,
           },
           opacity: 0,
-          zIndex: 0,
           x: 0 /* Change this to move position when scrolling */,
         }
       )
@@ -162,7 +161,6 @@ export default function Home() {
             //markers: true,
           },
           opacity: 0,
-          zIndex: 0,
           x: 200,
         }
       );

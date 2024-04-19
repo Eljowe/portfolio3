@@ -29,9 +29,9 @@ export default function Project() {
                   <Image
                     src={project.logo}
                     alt={project.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-md shadow-md"
+                    className="rounded-md object-cover shadow-md"
+                    width={512}
+                    height={512}
                   />
                 </div>
                 <div>
