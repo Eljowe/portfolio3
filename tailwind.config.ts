@@ -15,6 +15,12 @@ const config: Config = {
       borderRadius: {
         md: '0.375rem',
       },
+      colors: {
+        'theme-second': '#a7e6e0',
+        'theme-main': '#eff876',
+        'theme-background': '#1d1d1d',
+        'them-second-background': '#1d1d20',
+      },
     },
   },
   plugins: [require('tailwindcss-debug-screens')],

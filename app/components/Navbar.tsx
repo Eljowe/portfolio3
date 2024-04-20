@@ -56,30 +56,30 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
             className="crossIconButton fixed top-0 z-10 transition duration-500 hover:scale-110"
             onClick={toggleMenu}
           >
-            <BsList className="crossIcon text-[#eff876]" size="40px" />
+            <BsList className="crossIcon text-theme-main" size="40px" />
           </button>
         ) : (
           <ul className="flex w-full flex-row justify-center space-x-10 pt-4 text-xl">
             <li>
-              <a href="/#home" className=" text-[#eff876] transition duration-500 hover:scale-110 hover:underline">
+              <a href="/#home" className=" text-theme-main transition duration-500 hover:scale-110 hover:underline">
                 HOME
               </a>
             </li>
             <li>
               <a
-                className=" text-[#eff876] transition duration-500 hover:scale-110 hover:underline"
+                className=" text-theme-main transition duration-500 hover:scale-110 hover:underline"
                 href="/#aboutsection"
               >
                 ABOUT
               </a>
             </li>
             <li>
-              <a className=" text-[#eff876] transition duration-500 hover:scale-110 hover:underline" href="/#projects">
+              <a className=" text-theme-main transition duration-500 hover:scale-110 hover:underline" href="/#projects">
                 PROJECTS
               </a>
             </li>
             <li>
-              <a className=" text-[#eff876] transition duration-500 hover:scale-110 hover:underline" href="/#resume">
+              <a className=" text-theme-main transition duration-500 hover:scale-110 hover:underline" href="/#resume">
                 RESUME
               </a>
             </li>
@@ -87,7 +87,7 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
         )}
       </nav>
       <div className="absolute left-[4vw] top-[60px] z-10 mx-auto block h-[1px] w-[92vw] items-start bg-[#a6ad38] opacity-100">
-        <div className="z-10 block h-[1px] w-0 bg-[#eff876] opacity-100" id="myBar"></div>
+        <div className="bg-theme-main z-10 block h-[1px] w-0 opacity-100" id="myBar"></div>
       </div>
     </div>
   );

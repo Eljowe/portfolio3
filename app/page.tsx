@@ -173,7 +173,7 @@ export default function Home() {
       <section id="home" className="flex min-h-screen w-screen">
         <div
           ref={titleref}
-          className="titlediv fixed right-4 top-1/4 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal text-[#eff876] sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
+          className="titlediv text-theme-main fixed right-4 top-1/4 z-[2] flex max-w-[80vw] flex-col text-left text-[4rem] leading-normal sm:w-screen sm:text-[7rem] sm:leading-tight md:text-[8rem] lg:text-[10rem]"
         >
           <h1 className="main-title">PORTFOLIO</h1>
           <h1 className="main-title">JOEL WICKSTRÖM</h1>
@@ -203,7 +203,7 @@ export default function Home() {
       </section>
       <section
         id="projects"
-        className="z-10 flex min-h-screen w-full items-center justify-center bg-[#181818] bg-gradient-to-b p-6 text-[#eff876]"
+        className="text-theme-main z-10 flex min-h-screen w-full items-center justify-center bg-[#181818] bg-gradient-to-b p-6"
       >
         <Projects />
       </section>
@@ -217,14 +217,14 @@ export default function Home() {
         <a
           href="https://www.linkedin.com/in/joelwickstrom/"
           target="_blank"
-          className="m-4 ml-10 transition duration-500 hover:scale-110 hover:text-[#eff876]"
+          className="hover:text-theme-main m-4 ml-10 transition duration-500 hover:scale-110"
         >
           <BsLinkedin className="h-8 w-8" />
         </a>
         <a
           href="https://github.com/Eljowe"
           target="_blank"
-          className="m-4 transition duration-500 hover:scale-110 hover:text-[#eff876]"
+          className="hover:text-theme-main m-4 transition duration-500 hover:scale-110"
         >
           <BsGithub className="h-8 w-8" />
         </a>
