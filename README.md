@@ -5,4 +5,4 @@ Libraries such as GSAP, Three.js and Tailwind are used for playing around with t
 
 I will continue editing this website whenever I get new inspirations and ideas.
 
-Site analytics is integrated to [umami](https://umami-one-theta.vercel.app/dashboard)
+Site analytics is integrated to [umami]([https://umami-one-theta.vercel.app/dashboard](https://umami.is/))
