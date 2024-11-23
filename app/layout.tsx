@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         async
         defer
         data-website-id="df92c623-5850-41bc-b8ba-0b5bdab75b5a"
-        src="https://umami-toml.fly.dev/umami.js"
+        src="https://analytics.joelwickstrom.com/umami.js"
       ></script>
     </html>
   );
