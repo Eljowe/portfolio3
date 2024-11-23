@@ -13,7 +13,7 @@ export default function Project() {
   return (
     <div className="max-w-[1200px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
-        <h1 className="text-theme-main mb-4 text-left text-2xl font-normal">Projects</h1>
+        <h1 className="mb-4 text-left text-2xl font-normal text-theme-main">Projects</h1>
         <p className="mb-4 text-white">Some stuff I&apos;ve spent my time with in the past.</p>
       </div>
 
@@ -23,9 +23,9 @@ export default function Project() {
               <a
                 href={`/projects/${project.slug}`}
                 key={project._id}
-                className="hover:border-theme-main bg-theme-second-background flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent p-4 transition duration-500 ease-in-out hover:scale-110 hover:!opacity-100 group-hover:opacity-50"
+                className="flex min-h-[120px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-neutral-800 p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-theme-main hover:!opacity-100 group-hover:opacity-50"
               >
-                <div className="relative h-[60px] w-[60px] rounded-md bg-zinc-800">
+                <div className="relative h-[60px] w-[60px] rounded-md ">
                   <Image
                     src={project.logo}
                     alt={project.name}

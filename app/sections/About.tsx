@@ -5,13 +5,13 @@ const About = () => {
   return (
     <div id="about" className="max-w-[800px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
-        <h1 className="title text-theme-main mb-4 text-2xl font-normal">Foreword</h1>
+        <h1 className="title mb-4 text-2xl font-normal text-theme-main">Foreword</h1>
         <div className="Foreword">
           <p>
-            I am a 23-year-old Masters student currently specializing in Human-Computer Interaction at Aalto University.
-            Alongside my primary field of study, I pursue a minor in Computer Science. My background is in electrical
-            engineering, in which I hold a bachelor&apos;s degree from Aalto University. Additionally, I have studied
-            Mathematics at University of Helsinki and try to continue whenever time permits.
+            I am a 25-year-old IT professional working in consultancy. Pursuing a masters degree in Human-Computer
+            Interaction at Aalto University. My background is in electrical engineering, in which I hold a
+            bachelor&apos;s degree from Aalto University. Additionally, I studied Mathematics at University of Helsinki
+            but did not finish the degree.
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@ const About = () => {
             className="rounded-[0.5rem]"
           />
         </div>
-        <h3 className="text-theme-main mb-4 mt-6 text-2xl font-normal">About this website</h3>
+        <h3 className="mb-4 mt-6 text-2xl font-normal text-theme-main">About this website</h3>
         <p className="Aboutme">
           I try to update this website from time to time, as I gather new experience through work and personal projects.
           This website serves as a portfolio, CV, and a playground for my front-end experiments.
