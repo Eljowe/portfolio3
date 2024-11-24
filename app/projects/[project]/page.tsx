@@ -124,15 +124,16 @@ export default function Project({ params }: Props) {
   };
 
   return (
-    <main className="project bg-theme-background mx-auto min-h-screen w-screen overflow-x-hidden pb-10 text-white">
+    <main className="project mx-auto min-h-screen w-screen overflow-x-hidden bg-theme-background pb-10 text-white">
       <BurgerNavbar toggleMenu={toggleMenu} isScrolled={isScrolled} />
       <NavigationScreen toggleMenu={toggleMenu} />
       <div className="mx-auto mt-10 flex w-screen max-w-[800px] flex-col items-center px-6">
-        <div className="flex w-full flex-row items-start">
-          <h1 className="mb-4 mt-24 text-left text-3xl font-bold text-[#eff876] lg:text-5xl lg:leading-tight">
+        <div className="mt-24 flex w-full flex-row items-start">
+          <h1 className="mb-4 mt-2 text-left text-3xl font-bold text-[#eff876] lg:text-5xl lg:leading-tight">
             {project.name}
           </h1>
         </div>
+
         <div className="relative h-[30dvh] max-h-[400px] w-full rounded-xl border border-zinc-800 object-cover">
           <Image
             src={project.coverImage?.image}
@@ -142,12 +143,11 @@ export default function Project({ params }: Props) {
             className="h-max rounded-md shadow-md"
           />
         </div>
-        <div className="mt-8 flex w-full flex-row justify-evenly text-sm sm:text-xl">
+        <div className="mt-8 flex w-full flex-col justify-between text-sm sm:text-xl">
           <a
             href="/#projects"
-            className="flex flex-row items-center p-1 text-[#2dace7] transition duration-500 hover:scale-110 hover:underline"
+            className="flex flex-row items-center p-1 text-theme-second transition duration-500 hover:underline"
           >
-            <BsArrowLeft className="mr-2" />
             Back
           </a>
           {project.githubUrl ? (
@@ -155,7 +155,7 @@ export default function Project({ params }: Props) {
               href={project.githubUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="flex flex-row items-center p-1 text-[#2dace7] transition duration-500 hover:scale-110 hover:underline"
+              className="flex flex-row items-center p-1 text-theme-second transition duration-500 hover:underline"
             >
               Github repository <BsGithub className="ml-2" />
             </a>
@@ -169,7 +169,7 @@ export default function Project({ params }: Props) {
               href={project.projectUrl}
               rel="noreferrer noopener"
               target="_blank"
-              className="flex flex-row items-center p-1 text-[#2dace7] transition duration-500 hover:scale-110 hover:underline"
+              className="flex flex-row items-center p-1 text-theme-second transition duration-500 hover:underline"
             >
               Website <BsLink45Deg className="ml-2" />
             </a>
@@ -179,6 +179,7 @@ export default function Project({ params }: Props) {
             </span>
           )}
         </div>
+
         <div className="text-segment mx-auto mt-8 flex w-[100%] max-w-[800px] flex-col gap-y-6 text-justify leading-7">
           <PortableText
             value={project.description}

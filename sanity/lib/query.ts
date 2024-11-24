@@ -9,6 +9,7 @@ export async function getProjects() {
         "slug": slug.current,
         tagline,
         "logo": logo.asset->url,
+        description,
       }`
   );
 }
