@@ -12,7 +12,7 @@ import NavigationScreen from '../../components/NavigationScreen';
 import BurgerNavbar from '../../components/Navbar';
 import { gsap } from 'gsap';
 import { FC } from 'react';
-import { BsArrowLeft, BsGithub, BsLink45Deg } from 'react-icons/bs';
+import { BsGithub, BsLink45Deg } from 'react-icons/bs';
 import Image from 'next/image';
 
 type Props = {

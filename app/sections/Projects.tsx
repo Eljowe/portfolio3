@@ -2,7 +2,7 @@ import { getProjects } from '@/sanity/lib/query';
 import type { ProjectType } from '@/types';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { PortableText, PortableTextBlock } from '@portabletext/react';
+import { PortableText } from '@portabletext/react';
 
 export default function Project() {
   const [projects, setProjects] = useState<ProjectType[]>();
