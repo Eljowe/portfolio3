@@ -95,14 +95,14 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
                 target="_blank"
                 className="m-4 ml-10 transition duration-500 hover:scale-110"
               >
-                <BsLinkedin className="h-8 w-8" />
+                <BsLinkedin className="h-7 w-7" />
               </a>
               <a
                 href="https://github.com/Eljowe"
                 target="_blank"
                 className="m-4 transition duration-500 hover:scale-110"
               >
-                <BsGithub className="h-8 w-8" />
+                <BsGithub className="h-7 w-7" />
               </a>
             </div>
           </div>

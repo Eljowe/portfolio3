@@ -129,7 +129,7 @@ export default function Project({ params }: Props) {
       <NavigationScreen toggleMenu={toggleMenu} />
       <div className="mx-auto mt-10 flex w-screen max-w-[800px] flex-col items-center px-6">
         <div className="mt-24 flex w-full flex-row items-start">
-          <h1 className="mb-4 mt-2 text-left text-3xl font-bold text-[#eff876] lg:text-5xl lg:leading-tight">
+          <h1 className="mb-4 mt-2 text-left text-3xl font-bold text-white lg:text-5xl lg:leading-tight">
             {project.name}
           </h1>
         </div>

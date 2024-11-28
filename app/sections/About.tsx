@@ -28,7 +28,7 @@ const About = () => {
         <h3 className="mb-4 mt-6 text-2xl font-normal text-theme-main">About this website</h3>
         <p className="Aboutme">
           I try to update this website from time to time, as I gather new experience through work and personal projects.
-          This website serves as a portfolio, CV, and a playground for my front-end experiments.
+          This website serves as a portfolio, CV, and a playground for experiments.
         </p>
       </div>
     </div>

@@ -14,7 +14,7 @@ export default function Project() {
   return (
     <div className="max-w-[1200px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
-        <h1 className="mb-4 text-left text-2xl font-normal text-theme-main">Projects</h1>
+        <h1 className="mb-6 text-2xl font-normal text-theme-second">Projects</h1>
       </div>
 
       <div className="group mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -31,8 +31,8 @@ export default function Project() {
                     <div className="">
                       <div className="flex flex-row justify-between">
                         <div>
-                          <h2 className="mb-1 text-theme-second">{project.name}</h2>
-                          <div className="text-sm text-zinc-400">{project.tagline}</div>
+                          <h2 className="mb-1 text-white">{project.name}</h2>
+                          <div className="text-sm text-theme-second">{project.tagline}</div>
                         </div>
                         <div className="relative ml-2 h-[60px] w-[60px] rounded-md ">
                           <Image
@@ -44,7 +44,7 @@ export default function Project() {
                           />
                         </div>
                       </div>
-                      <div className="relative mt-2 max-h-[5em] overflow-hidden text-sm text-zinc-200">
+                      <div className="relative mt-2 max-h-[5em] overflow-hidden text-base text-neutral-400">
                         <PortableText
                           value={project.description}
                           components={{
