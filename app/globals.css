@@ -193,7 +193,7 @@ body::after {
 
 .project h4 {
   font-size: xx-large;
-  color: #eff876;
+  color: rgb(247 159 121);
   text-align: start;
   margin: 4rem 0 1rem 0;
 }
