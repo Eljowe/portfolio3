@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <div id="about" className="max-w-[800px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
+    <div id="about_" className="max-w-[800px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
         <h1 className="title mb-4 text-2xl font-normal text-theme-main">Foreword</h1>
         <div className="Foreword">

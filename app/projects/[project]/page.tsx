@@ -145,7 +145,7 @@ export default function Project({ params }: Props) {
         </div>
         <div className="mt-8 flex w-full flex-col justify-between text-sm sm:text-xl">
           <a
-            href="/#projects"
+            href="/#showcase"
             className="flex flex-row items-center p-1 text-theme-second transition duration-500 hover:underline"
           >
             Back

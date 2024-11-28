@@ -7,7 +7,6 @@ import BurgerNavbar from './components/Navbar';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Resume from './sections/Resume';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import ThreeScene from './components/ThreeScene';
 import Image from 'next/image';
 
@@ -196,13 +195,13 @@ export default function Home() {
         </div>
       </section>
       <section
-        id="aboutsection"
+        id="about"
         className="z-10 flex min-h-screen w-full items-center justify-center bg-[#1d1d1d] p-6 shadow-[-1px_-1px_10px_0px_rgba(0,0,0,0.88);] sm:rounded-none"
       >
         <About />
       </section>
       <section
-        id="projects"
+        id="showcase"
         className="z-10 flex min-h-screen w-full items-center justify-center bg-[#181818] bg-gradient-to-b p-6 text-theme-main"
       >
         <Projects />

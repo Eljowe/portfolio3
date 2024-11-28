@@ -68,19 +68,16 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
                 </a>
               </li>
               <li>
-                <a
-                  className=" text-theme-main transition duration-500 hover:scale-110 hover:underline"
-                  href="/#aboutsection"
-                >
+                <a className=" text-theme-main transition duration-500 hover:scale-110 hover:underline" href="/#about">
                   ABOUT
                 </a>
               </li>
               <li>
                 <a
                   className=" text-theme-main transition duration-500 hover:scale-110 hover:underline"
-                  href="/#projects"
+                  href="/#showcase"
                 >
-                  PROJECTS
+                  SHOWCASE
                 </a>
               </li>
               <li>

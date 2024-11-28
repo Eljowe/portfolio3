@@ -14,7 +14,7 @@ export default function Project() {
   return (
     <div className="max-w-[1200px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
-        <h1 className="mb-6 text-2xl font-normal text-theme-main">Projects</h1>
+        <h1 className="mb-6 text-2xl font-normal text-theme-main">Showcase</h1>
       </div>
 
       <div className="group mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
