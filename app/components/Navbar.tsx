@@ -2,6 +2,7 @@ import { BsList } from 'react-icons/bs';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useState } from 'react';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 
 type BurgerNavbarProps = {
   toggleMenu: () => void;
@@ -59,35 +60,56 @@ const BurgerNavbar: React.FC<BurgerNavbarProps> = ({ toggleMenu, isScrolled }) =
             <BsList className="crossIcon text-theme-main" size="40px" />
           </button>
         ) : (
-          <ul className="flex w-full flex-row justify-center space-x-10 pt-4 text-xl">
-            <li>
-              <a href="/#home" className=" text-theme-main transition duration-500 hover:scale-110 hover:underline">
-                HOME
-              </a>
-            </li>
-            <li>
+          <div className="flex flex-row justify-between">
+            <ul className="flex w-full flex-row justify-start space-x-10 pt-4 text-xl">
+              <li>
+                <a href="/#home" className=" text-theme-main transition duration-500 hover:scale-110 hover:underline">
+                  HOME
+                </a>
+              </li>
+              <li>
+                <a
+                  className=" text-theme-main transition duration-500 hover:scale-110 hover:underline"
+                  href="/#aboutsection"
+                >
+                  ABOUT
+                </a>
+              </li>
+              <li>
+                <a
+                  className=" text-theme-main transition duration-500 hover:scale-110 hover:underline"
+                  href="/#projects"
+                >
+                  PROJECTS
+                </a>
+              </li>
+              <li>
+                <a className=" text-theme-main transition duration-500 hover:scale-110 hover:underline" href="/#resume">
+                  RESUME
+                </a>
+              </li>
+            </ul>
+            <div className="flex text-theme-main">
               <a
-                className=" text-theme-main transition duration-500 hover:scale-110 hover:underline"
-                href="/#aboutsection"
+                href="https://www.linkedin.com/in/joelwickstrom/"
+                target="_blank"
+                className="m-4 ml-10 transition duration-500 hover:scale-110"
               >
-                ABOUT
+                <BsLinkedin className="h-8 w-8" />
               </a>
-            </li>
-            <li>
-              <a className=" text-theme-main transition duration-500 hover:scale-110 hover:underline" href="/#projects">
-                PROJECTS
+              <a
+                href="https://github.com/Eljowe"
+                target="_blank"
+                className="m-4 transition duration-500 hover:scale-110"
+              >
+                <BsGithub className="h-8 w-8" />
               </a>
-            </li>
-            <li>
-              <a className=" text-theme-main transition duration-500 hover:scale-110 hover:underline" href="/#resume">
-                RESUME
-              </a>
-            </li>
-          </ul>
+            </div>
+          </div>
         )}
       </nav>
       <div className="absolute left-[4vw] top-[60px] z-10 mx-auto block h-[1px] w-[92vw] items-start bg-[#a6ad38] opacity-100">
-        <div className="bg-theme-main z-10 block h-[1px] w-0 opacity-100" id="myBar"></div>
+        <div className="z-10 block h-[1px] w-0 bg-theme-main opacity-100" id="myBar"></div>
       </div>
     </div>
   );

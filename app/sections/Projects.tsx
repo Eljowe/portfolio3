@@ -15,7 +15,6 @@ export default function Project() {
     <div className="max-w-[1200px] pt-10 text-justify font-extralight sm:pt-0 sm:text-xl">
       <div className="">
         <h1 className="mb-4 text-left text-2xl font-normal text-theme-main">Projects</h1>
-        <p className="mb-4 text-white">Something to show</p>
       </div>
 
       <div className="group mb-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -27,7 +26,7 @@ export default function Project() {
                   <a
                     href={`/projects/${project.slug}`}
                     key={project._id}
-                    className="flex min-h-[140px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-neutral-800 p-4 transition duration-500 ease-in-out hover:scale-110 hover:border-theme-main hover:!opacity-100 group-hover:opacity-50"
+                    className="flex min-h-[140px] flex-row items-center gap-x-4 rounded-lg border border-transparent bg-neutral-800 p-4 transition duration-500 ease-in-out hover:scale-105 hover:border-theme-second hover:!opacity-100 group-hover:opacity-50"
                   >
                     <div className="">
                       <div className="flex flex-row justify-between">
@@ -52,7 +51,7 @@ export default function Project() {
                             types: {},
                           }}
                         />
-                        <div className="absolute bottom-0 left-0 h-6 w-full bg-gradient-to-t from-neutral-800 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 h-12 w-full bg-gradient-to-t from-neutral-800 to-transparent"></div>
                       </div>
                     </div>
                   </a>
