@@ -31,8 +31,8 @@ export default function Project() {
                     <div className="">
                       <div className="flex flex-row justify-between">
                         <div>
-                          <h2 className="mb-1 text-white">{project.name}</h2>
-                          <div className="text-sm text-theme-second">{project.tagline}</div>
+                          <h2 className="mb-1 text-theme-second">{project.name}</h2>
+                          <div className="text-theme-lowlight text-sm">{project.tagline}</div>
                         </div>
                         <div className="relative ml-2 h-[60px] w-[60px] rounded-md ">
                           <Image
@@ -44,7 +44,7 @@ export default function Project() {
                           />
                         </div>
                       </div>
-                      <div className="relative mt-2 max-h-[5em] overflow-hidden text-base text-neutral-400">
+                      <div className="relative mt-2 max-h-[5em] overflow-hidden text-base text-white">
                         <PortableText
                           value={project.description}
                           components={{
