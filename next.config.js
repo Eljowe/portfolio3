@@ -2,11 +2,28 @@
 const nextConfig = {
   images: {
     unoptimized: true,
-    domains: ['cdn.sanity.io', 'joelwickstrom.com', 'api.sanity.io', 'nextjoelapp.fly.dev'],
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'joelwickstrom.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.sanity.io',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'nextjoelapp.fly.dev',
         port: '',
         pathname: '/**',
       },

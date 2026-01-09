@@ -4,7 +4,7 @@ import type { ProjectType } from '@/types';
 import { PortableText } from '@portabletext/react';
 import urlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/lib/client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { SanityImageAsset, getImageDimensions } from '@sanity/asset-utils';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -16,9 +16,9 @@ import { BsGithub, BsLink45Deg } from 'react-icons/bs';
 import Image from 'next/image';
 
 type Props = {
-  params: {
+  params: Promise<{
     project: string;
-  };
+  }>;
 };
 
 interface SampleImageProps {
@@ -77,7 +77,7 @@ const SampleCodeComponent: FC<SampleCodeProps> = ({ value }) => {
   }
   */
 export default function Project({ params }: Props) {
-  const slug = params.project;
+  const { project: slug } = use(params);
   //const project: ProjectType = getSingleProject(slug);
   const [project, setProject] = useState<ProjectType>();
   const [isScrolled, setIsScrolled] = useState(false);
