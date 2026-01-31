@@ -16,7 +16,7 @@ const config: Config = {
         md: '0.375rem',
       },
       colors: {
-        'theme-second': '#81be84',
+        'theme-second': '#fab3a9',
         'theme-third': '#9fb8d4',
         'theme-main': '#eff876',
         'theme-lowlight': '#a3a3a3',
